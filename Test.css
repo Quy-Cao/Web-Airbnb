@@ -605,9 +605,3 @@ a.click-hover:hover {
 
 
 /*test*/
-#footer{
-    clear: both;
-    height: 300px;
-    width: 100%;
-    background-color: cadetblue;
-}
