@@ -397,9 +397,10 @@ i.far.fa-question-circle:hover {
 /* img-map */
 .anhmap {
     background-image: url(Anh/map.jpg);
-    height: 625px;
+    height: 475px;
     position: fixed;
     width: 100%;
+
 }
 /*Switch*/
 span.show-map {
@@ -457,7 +458,7 @@ span.show-map {
     flex-wrap: nowrap;
 }
 .img2{
-    width: 190px;
+    width: 205px;
     padding: 4px;
     height: 212px;
 }
@@ -478,7 +479,7 @@ span.show-map {
     font-weight: bold;
 }
 a.dayphuluu5 {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     padding: 4px;
 }
@@ -503,6 +504,11 @@ a.dayphuluu6 {
     .dayphuluu4 {
         width: 100%;
         margin: 0px 28px;
+        font-size: 13px;
+    }
+    .dayphuluu5 {
+        width: 100%;
+        margin: 0px 28px;
     }
     .dayphuluu6 {
         width: 100%;
@@ -510,7 +516,7 @@ a.dayphuluu6 {
     }
 }
 span.jumbotron-tieude {
-    font-size: 33px;
+    font-size: 31px;
     font-weight: 200px;
     font-weight: bold;
 }
@@ -530,7 +536,8 @@ img.img1:hover {
     background-color: #d6d1cb;
 }
 .jumbotron {
-    padding: 27px 0px;
+    padding-top: 35px;
+    padding-bottom: 15px;
 }
 .col-lg-4.jumbotron-left {
     
@@ -598,3 +605,9 @@ a.click-hover:hover {
 
 
 /*test*/
+#footer{
+    clear: both;
+    height: 300px;
+    width: 100%;
+    background-color: cadetblue;
+}
