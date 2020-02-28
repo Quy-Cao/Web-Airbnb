@@ -1,5 +1,5 @@
 body {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-family: Varela;
     font-size: 14px;
     line-height: 1.43;
     color: #484848;
@@ -50,6 +50,7 @@ img.airbnb {
     height: 48px !important;
     overflow-y: hidden;
     font-size: 20px;
+    width: 460px;
 }
 .search-group .sub{
     
@@ -91,13 +92,13 @@ img.airbnb {
     color: #484848 ;
     font-family: auto;
 }
+/* Sub */
 .title {
     text-transform: uppercase;
     padding-bottom: 2px ;
     padding-left: 32px ;
     padding-right: 32px ;
     padding-top: 16px ;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-size: 14px;
     line-height: 1.43;
     color: #484848;
@@ -128,23 +129,53 @@ button.sub-button:hover {
     background-color: black !important;
     color: white !important;
 }
-/* Sub */
-.checkbox-flex {
+
+
+/* Header1-right */
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+    float: right;
+    margin: 25px 0;
+}
+.list-inline>li {
+    display: inline-block;
+    padding: 0 16px;
+}
+
+i.fas.fa-dollar-sign {
+    font-size: 17px;
+    color: #888080 !important;
+}
+.list-inline a {
+    color: #3a3b3c;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.list-inline a:hover {
+    padding: 33px 0px;
+    border-bottom: 2px solid #888080;
+}
+
+/* header2 */
+.list-check-left {
     display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
 }
 input.checkbox-left {
-    width: 40px;
-    height: 25px;
-    margin: 18px 13px;
+    height: 20px;
+    width: 20%;
+    margin-top: 23px;
 }
 .checkbox-right {
-    flex-grow: 8;
+    width: 0;
+    flex-grow: 1;
 }
-.checkbox-right p {
-    margin-top: -7px;
-}
-.open ul.dropdown-menu {
+ul.dropdown-menu {
     width: 350px;
 }
 ul.dropdown-menu {
@@ -171,37 +202,6 @@ button.btn.btn-default.delete:hover {
 button.btn.btn-info.save:hover {
     background-color: black;
 }
-/* Header-right */
-.list-inline {
-    padding-left: 0;
-    list-style: none;
-    margin-left: -5px;
-    float: right;
-    margin: 25px 0;
-}
-.list-inline>li {
-    display: inline-block;
-    padding: 0 16px;
-}
-
-i.fas.fa-dollar-sign {
-    font-size: 17px;
-    color: #888080 !important;
-}
-.list-inline a {
-    color: #3a3b3c;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: inherit;
-    font-size: 100%;
-    font-weight: inherit;
-}
-
-.list-inline a:hover {
-    padding: 32px 0px;
-    border-bottom: 2px solid #888080;
-}
-
 /*Header 2*/
 .header2 {
     border-top: 1px solid #dcd4d4;
@@ -217,7 +217,7 @@ button.btn.btn-default {
     padding: 8px 16px;
     margin-right: 13px;
     font-weight: 400 !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
     line-height: 18px !important;
 }
 button.btn.btn-default:hover {
@@ -227,9 +227,9 @@ button.btn.btn-default:hover {
 ul.dropdown-menu {
     top: 45px;
 }
-ul.dropdown-menu.row {
+/* ul.dropdown-menu.row {
     padding: 17px 0px;
-}
+} */
 button.btn.btn-default:focus {
     outline: none;
 }
@@ -278,10 +278,6 @@ span.show-map {
 
 /*content*/
 
-p.didulich {
-    margin-top: 25px;
-}
-
 /*combinator-img*/
 .heart {
     width: 32px !important;
@@ -301,7 +297,8 @@ p.didulich {
         0px 2px 4px rgba(0, 0, 0, 0.18) !important;
 }
 .heart:hover {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0, .2);
+    background: white;
 }
 .icon-heart {
     position: absolute;
@@ -310,31 +307,33 @@ p.didulich {
     width: 16px;
     height: 16px;
 }
-.carousel-prev, .carousel-next {background-image: none; display: none;}
+
+a.left.carousel-control.carousel-prev, a.right.carousel-control.carousel-next {
+    background-image: none;
+    display: none;
+}
+
 span.glyphicon.glyphicon-chevron-left, span.glyphicon.glyphicon-chevron-right {
     background-color: white;
-    font-size: 17px;
+    font-size: 12px;
     border-radius: 20px;
-    padding: 6px 7px;
+    padding: 8px 7px;
     color: black;
 }
 span.glyphicon.glyphicon-chevron-right:hover {
-    box-shadow: 2px -2px 20px 8px rgba(0,0,0, .2);
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0, .2);
 }
 span.glyphicon.glyphicon-chevron-left:hover {
-    box-shadow: 2px -2px 20px 8px rgba(0,0,0, .2);
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0, .2);
 }
 
 .rowhover:hover .carousel-control.right {
     display: inline;
-    color: white;
 }
 .rowhover:hover .carousel-control.left {
     display: inline;
 }
-.carousel .carousel-inner img {
-    width: 100%;
-}
+
 .carousel-inner>.item>a>img {
     display: block;
     max-width: 100%;
@@ -349,13 +348,17 @@ span.glyphicon.glyphicon-chevron-left:hover {
 span.glyphicon.glyphicon-star {
     color: red;
     padding: 4px 10px;
-    color: red;
 }
 span.glyphicon.glyphicon-star:hover {
     color: aquamarine;
 }
+h4.can-ho {
+    font-size: 16px;
+    color: #717171;
+}
 p1 {
     color: black;
+    font-size: 18px;
 }
 span.danhgia {
     float: right;
@@ -371,9 +374,8 @@ span.labal-tieude {
 }
 .giuong-phong {
     color: #717171 !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
     font-weight: 400 !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
     line-height: 18px !important;
     max-height: 18px !important;
     overflow: hidden !important;
@@ -383,43 +385,42 @@ span.labal-tieude {
     -webkit-box-orient: vertical !important;
     margin-top: 6px;
 }
-p.tenphong {
-    font-size: 20px;
+.tenphong {
     color: #222222;
-    
+
 }
-span.information {
+/* span.information {
     color: black;
     font-family: -webkit-body;
     font-size: 17px;
     cursor: pointer;
-}
-.label-info{
+} */
+/* .label-info{
     background-color: #f0fdfd;
     border-radius: 20px;
     padding: 3px 10px;
-}
-i.far.fa-gem {
+} */
+/* i.far.fa-gem {
     color: black;
-}
-.hover-control {
+} */
+/* .hover-control {
     background-color: #d7f1f9;
     color: black;
     width: 175px;
     display: none;
-}
-span.information:hover .hover-control {
+} */
+/* span.information:hover .hover-control {
     display: inline-block;
     
-}
+} */
 .tienphong {float: right;}
 small.dollar {font-size: 18px;color: #8a7a7a;text-decoration: line-through;margin-right: 5px;}
 .number-sum {
     margin-top: -10px; float: right; font-size: 20px;
 }
-.icon:hover {
+/* .icon:hover {
     color: aqua;
-}
+} */
 i.fas.fa-dollar-sign {
     color: black !important;
     font-size: 20px;
@@ -446,7 +447,6 @@ i.far.fa-question-circle:hover {
     background-image: url(Anh/map.jpg);
     height: 100%;
     width: 410px;
-
 }
 
 
@@ -508,7 +508,6 @@ a.dayphuluu6 {
 span.jumbotron-tieude {
     margin: 0px !important;
     word-wrap: break-word !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
     font-size: 32px !important;
     font-weight: 800 !important;
     line-height: 1.125em !important;
@@ -637,7 +636,7 @@ section {
     width: 70%;
 }
 aside {
-    height: 500px;
+    height: 527px;
     position: sticky;
     top: 130px;
     width: 30%;
@@ -662,7 +661,7 @@ footer {
     width: 100%;
 }
 .footer-header {
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 16px;
     font-weight: 800 !important;
     line-height: 1.28571em !important;
@@ -673,7 +672,8 @@ footer {
     margin-bottom: 4px;
 }
 .footer-content a {
-    color: #767676 !important;
+    color: #767676 !important;  
+    font-size: 15px;
 }
 .footer-content .label-info {
     background-color: #0a7b7b;
@@ -721,7 +721,7 @@ i.far.fa-copyright {
         display: none;
     }
     section {
-        width: 100%;
+        width: 100% !;
     }
     aside {
         display: none;
