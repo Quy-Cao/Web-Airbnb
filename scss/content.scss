@@ -1,0 +1,100 @@
+
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+.rowhover{     
+    .col-sm-8.content {
+        @include margin-padding(15px 0 0 0, 0 30px 0 0);
+        h4.can-ho {
+            @include fontsize-lineh(16px, 1.43, $fontColor);
+            p1 {
+                @include fontsize-lineh(18px, 1.43, black);
+            }
+            span.danhgia {
+                float: right;
+                font-size: 15px;
+            }
+            span.labal-tieude {
+                @include background-color(white, black);
+                @include border-radius(1px solid black, 7px);
+                padding: 3px 9px;
+                font-size: 13px;
+            }
+        }
+        .tenphong {
+            color: black;
+        }
+        .giuong-phong {
+            color: #484848 ;
+            font-weight: 400 ;
+            font-size: 18px ;
+            line-height: 18px;
+            max-height: 18px ;
+            overflow: hidden ;
+            text-overflow: ellipsis;
+            display: -webkit-box ;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            margin-top: 6px;
+        }
+        .tienphong {
+            float: right;
+            .dollar-top {
+                .dollar {
+                    @include fontsize-lineh(18px, 1.43, $fontColor);
+                    text-decoration: line-through;
+                    margin-right: 5px;
+                }
+                i.fas.fa-dollar-sign {
+                    @include fontsize-lineh(20px, 1.43, $fontColor);
+                }
+                p2 {
+                    @include fontsize-lineh(20px, 1.43, $fontColor);
+                    font-family: serif;
+                }
+            }
+            
+            .number-sum {
+                margin-top: -10px; 
+                float: right; 
+                font-size: 20px;
+                i.far.fa-question-circle:hover {
+                    color: #484848;
+                }
+            }
+        }
+
+    }
+    
+}
+
+//responsive
+@include responsive_1024(){
+    .rowhover {
+        width: 100%;
+    }
+    .col-sm-8.content {
+        padding-right: 0px;
+        padding-left: 0;
+    }
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@include responsive_640() {
+    .row.rowhover {
+        margin-left: 0px;
+    }
+    .tienphong {
+        float: left !important;
+    }
+    .giuong-phong {
+        display: none !important;
+    }
+    .tienphong .number-sum {
+        display: none !important;
+    }
+}

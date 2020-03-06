@@ -1,0 +1,48 @@
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+.carousel {
+    .carousel-inner {
+        &>.item>a>img {
+            display: block;
+            @include width-height(100%, 200px);
+        }
+
+    }
+    a.left.carousel-control.carousel-prev, a.right.carousel-control.carousel-next {
+        background-image: none;
+        display: none;
+        span.glyphicon.glyphicon-chevron-left {
+            @include glyphicon-chevron();
+            &:hover {
+                box-shadow: $primary-shadow;
+            }
+        }
+        span.glyphicon.glyphicon-chevron-right {
+            @include glyphicon-chevron();
+            &:hover {
+                box-shadow: $primary-shadow;
+            }
+        }
+    }
+}
+//hover
+.rowhover{
+    &:hover {
+        .carousel-control.right {
+            display: inline !important;
+        }
+    }
+    &:hover .carousel-control.left {
+        display: inline !important;
+    }
+}
+
+//responsive
+@include responsive_768() {
+    .carousel-inner>.item>a>img {
+        display: block !important;
+        @include width-height(100% !important, 100% !important);
+    }
+}

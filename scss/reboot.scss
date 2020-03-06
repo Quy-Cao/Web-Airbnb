@@ -1,0 +1,12 @@
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+body {
+    font-family: Varela;
+    @include fontsize-lineh(14px, 1.43, $fontColor);
+    @include background-color(#fff, #484848);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include margin-padding(0, 0);
+}

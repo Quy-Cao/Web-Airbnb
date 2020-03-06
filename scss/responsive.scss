@@ -1,0 +1,31 @@
+$res_1024 : "only screen and (max-width: 1024px)";
+$res_768 : "only screen and (max-width: 768px)";
+$res_640 : "only screen and (max-width: 640px)";
+$res_480 : "only screen and (max-width: 480px)";
+
+@mixin responsive_1024() {
+    @media #{$res_1024} {
+        @content;
+    }
+}
+@mixin responsive_768() {
+    @media #{$res_768} {
+        @content;
+    }
+}
+@mixin responsive_640() {
+    @media #{$res_640} {
+        @content;
+    }
+}
+@mixin responsive_480() {
+    @media #{$res_480} {
+        @content;
+    }
+}
+
+$xs: 0px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;

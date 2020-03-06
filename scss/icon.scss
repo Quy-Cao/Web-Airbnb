@@ -1,0 +1,75 @@
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+//search-group
+.search-icon{
+    @include position-align(absolute, top, left, 15px, 17px);
+    z-index: 5;
+    font-size: 19px;
+}
+
+//icon-heart
+.heart {
+    @include width-height(32px, 32px );
+    @include position-align(absolute, top, left, 10px, 10px);
+    z-index: 1;
+    border-radius: 50%;
+    @include background-color(rgba(255, 255, 255, 0.9), #222222);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: $primary-shadow;
+    &:hover {
+        box-shadow: $primary-shadow;
+    }
+    .icon-heart {
+        @include position-align(absolute, top, left, 9px, 8px);
+        @include width-height(16px, 16px);
+    }
+}
+//iccon-star
+.glyphicon-star {
+    color: red;
+}
+
+//pagination
+.pagination {
+    &>li:last-child>a {
+        @include pagination-icon();
+    }
+    &>li:first-child>a {
+        @include pagination-icon();
+    }
+    .icon-left:hover {
+        @include background-color(rgb(168, 157, 157), black);
+        box-shadow: $primary-shadow;
+    }
+}
+
+//jumbotron-heart-icon
+.heart1 {
+    @include width-height(32px, 32px);
+    @include position-align(absolute, top, right, 10px, 10px);
+    z-index: 1;
+    border-radius: 50%;
+    @include background-color(rgba(255, 255, 255, 0.9),#222222);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: $primary-shadow;
+    &:hover {
+        box-shadow: $primary-shadow;
+    }
+    .icon-heart {
+        @include position-align(absolute, top, left, 9px, 8px);
+    }
+}
+
+//respon
+@include responsive_1024(){  
+    .heart1 {
+        top: 20px !important;
+        right: 20px !important;
+    }  
+}

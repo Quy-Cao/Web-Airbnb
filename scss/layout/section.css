@@ -1,0 +1,10 @@
+section {
+  width: 70%;
+}
+
+@media only screen and (max-width: 1024px) {
+  section {
+    width: 100% !important;
+  }
+}
+/*# sourceMappingURL=section.css.map */

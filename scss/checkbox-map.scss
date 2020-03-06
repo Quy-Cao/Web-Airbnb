@@ -1,0 +1,44 @@
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+.checkbox-map {
+    float: right;
+    display: flex;
+    margin-right: 12px;
+    span.show-map {
+        margin: 13px;
+        font-size: 16px;
+    }
+    .center input[type="checkbox"]{
+        position: relative;
+        @include width-height(72px, 36px);
+        -webkit-appearance: none;
+        background: #c6c6c6;
+        outline: none;
+        border-radius: 20px;
+        /* transition: 0.5s; */
+        &:before{
+            content: "";
+            @include position-align(absolute, top, left, 1px, 2px);
+            @include width-height(34px, 34px);
+            @include border-radius(1px solid #928a8a, 20px);
+            background: white;
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+    }
+    .center input:checked[type="checkbox"]{
+        background: black;
+        &:before{
+            left: 36px;
+        }
+    }
+}
+
+//responsive
+@include responsive_1024(){
+    .checkbox-map {
+        display: none !important;
+    }
+}

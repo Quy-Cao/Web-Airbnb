@@ -1,0 +1,60 @@
+
+
+@mixin glyphicon-chevron() {
+    @include fontsize-lineh(12px, 1.43, black);
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px 7px;
+}
+@mixin pagination() {
+    @include fontsize-lineh(19px, 1.43, black);
+    position: relative;
+    float: left;
+    padding: 4px 12px;
+    margin-left: -1px;
+    text-decoration: none;
+    background-color: #fff;
+    border: none !important;
+}
+//test Map
+@mixin fontsize-lineh ($fonts, $lineh, $color) {
+    font-size: $fonts;
+    line-height: $lineh;
+    color: $color;
+}
+@mixin border-radius($border, $radius) {
+    border: $border;
+    border-radius: $radius;
+}
+@mixin pagination-icon {
+    margin-right: 4px;
+    background-color: #ececec;
+    @include border-radius(1px solid black, 20px);
+    padding: 5px 13px;
+}
+@mixin display-flex($direction, $wrap) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+@mixin width-height($width, $height ) {
+    height: $height;
+    width: $width;
+}
+@mixin margin-padding($margin, $padding) {
+    padding: $padding;
+    margin: $margin;
+}
+@mixin background-color($background, $color) {
+    background-color: $background;
+    color: $color;
+}
+@mixin position-align($pos, $top-bot, $left-right, $valuetb, $valuelr) {
+    position: $pos;
+    #{$top-bot}: $valuetb;
+    #{$left-right}: $valuelr;
+}
+@mixin border__topbot{
+    border-top: 1px solid #dcd4d4;
+    border-bottom: 1px solid #dcd4d4;
+}

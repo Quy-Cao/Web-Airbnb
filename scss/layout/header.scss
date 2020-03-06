@@ -1,0 +1,36 @@
+@import "./../mixin.scss";
+@import "./../responsive.scss";
+@import "./../variables.scss";
+
+header {
+    @include width-height(100%, 130px);
+    position: fixed;
+    z-index: 20;
+    background: white;
+    
+    // header1
+    .row-header1 {
+        height: 80px;
+        .left-header{
+            @include display-flex(row, nowrap);
+            height: 80px;
+        }
+    }
+
+// header2
+    .header2 {
+        @include border__topbot;
+        background: white;
+    }
+}
+//responsive
+@include responsive_1024(){
+    .header2 {
+        @include border__topbot;
+    }
+}
+@include responsive_640() {
+    .header2 {
+        @include border__topbot;
+    }
+}

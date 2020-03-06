@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,QAAQ,CAAC;EACL,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,KAAK;CACrB",
+    "sources": [
+        "wrapper.scss",
+        "../mixin.scss",
+        "../responsive.scss",
+        "../variables.scss"
+    ],
+    "names": [],
+    "file": "wrapper.css"
+}

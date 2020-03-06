@@ -1,0 +1,74 @@
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+.jumbotron-main {
+    .jumbotron-row {
+        .jumbotron-left {
+            padding: 30px 10px 0px 0px;
+            .jumbotron-tieude {
+                margin: 0px !important;
+                word-wrap: break-word !important;
+                @include fontsize-lineh(32px, 1.43, $fontColor);
+                font-weight: 800 !important;
+            }
+            .jumbotron-nd {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+            
+        }
+        .jumbotron-table {
+            padding: 0px;
+            overflow-x: scroll;
+            &::-webkit-scrollbar { 
+                display: block; 
+            }
+            .gop{
+                @include display-flex(row, nowrap);
+                .content-jumbotron {
+                    @include display-flex(column, nowrap);
+                    position: relative;
+                    & a{
+                        text-decoration: none;
+                        color: #484848;
+                    }
+                    .dayphuluu4 {
+                        width: 190px;
+                        padding: 4px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    .dayphuluu5 {
+                        font-size: 16px;
+                        font-weight: bold;
+                        padding: 4px;
+                    }
+                    .dayphuluu6 {
+                        @include fontsize-lineh(15px, 1.43, $fontColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//responsive
+@include responsive_1024(){
+    .jumbotron-main {
+        width: 100%;
+    }
+}
+
+@include responsive_768() {
+    .row.jumbotron-row {
+        @include margin-padding(0 0 0 0px !important, 0);
+    }
+}
+
+@include responsive_640() {
+    .row.jumbotron-row {
+        width: 100%;
+        margin-left: 0px !important;
+    }
+}

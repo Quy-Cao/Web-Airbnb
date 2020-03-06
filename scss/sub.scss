@@ -1,0 +1,32 @@
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+.sub{
+    display: none;
+    box-shadow: $primary-shadow;
+    position: absolute;
+    top: 47px;
+    background-color: white;
+    border-radius: 0 0 7px 7px;
+    width: 596px;
+    z-index: 5;
+    border-top: 1px solid #d6caca;
+    transition: 0.3s ease-in !important;
+    .title {
+        text-transform: uppercase;
+        padding: 16px 32px 2px 32px;
+        @include fontsize-lineh(14px, 1.43, $fontColor);
+        color: #484848;
+        font-weight: 600;
+    }
+}
+
+//responsive
+@include responsive_640() {
+    .sub .group-sub-btn {
+        display: flex !important;
+        flex-wrap: wrap;
+        padding: 0px !important;
+    }
+}

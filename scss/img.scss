@@ -1,0 +1,58 @@
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+//Anh logo airbnb
+.logo-img{
+    width: auto;
+    padding: 0 24px;
+    .airbnb {
+        height: 40%;
+        margin: 25px 0px;
+    }
+}
+
+//Anh Jumbotron
+.img2{
+    @include width-height(195px, 212px);
+    padding: 4px;
+    border-radius: 7px;
+}
+
+//Anh Map
+.anhmap {
+    background-image: url(Anh/map.jpg);
+    @include width-height(410px, 100%);
+}
+
+//responsive
+@include responsive_1024(){
+    .img2 {
+        @include width-height(100% !important, 400px !important);
+        padding: 10px !important;
+    }
+    .left-header .logo-img {
+        padding: 0 24px 0 0 !important;
+    }
+    .col-sm-4.row-img1 {
+        padding-left: 0;
+    }
+
+}
+
+@include responsive_768() {
+    .img2 {
+        @include width-height(100% !important, 300px !important);
+        padding: 10px !important;
+    }
+    .carousel-inner>.item>a>img {
+        display: block !important;
+        @include width-height(100% !important, 100% !important);
+    }
+}
+
+@include responsive_640() {
+    .col-sm-4.row-img1 {
+        padding-left: 0;
+    }
+}

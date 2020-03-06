@@ -1,0 +1,72 @@
+//Spacing
+$setSpacing: (p, px, py, pt, pr, pb, pf, m, mx, my, mt, mr, mb, ml);
+@mixin getSpacin($value, $add_val, $type) {
+    $setSpacing: (
+        p: (
+            type: padding,
+            val: ($value * $add_val) + px
+        )
+        px: (
+            type: [padding-left padding-right],
+            val: ($value * $add_val) + px
+        )
+        py: (
+            type: [padding-top padding-bottom],
+            val: ($value * $add_val) + px
+        )
+        pt: (
+            type: padding-top,
+            val: ($value * $add_val) + px
+        )
+        pr: (
+            type: padding-right,
+            val: ($value * $add_val) + px
+        )
+        pb: (
+            type: padding-bottom,
+            val: ($value * $add_val) + px
+        )
+        pl: (
+            type: padding-left,
+            val: ($value * $add_val) + px
+        )
+        m: (
+            type: margin,
+            val: ($value * $add_val) + px
+        )
+        mx: (
+            type: [margin-left margin-right],
+            val: ($value * $add_val) + px
+        )
+        my: (
+            type: [margin-top margin-bottom],
+            val: ($value * $add_val) + px
+        )
+        mt: (
+            type: margin-top,
+            val: ($value * $add_val) + px
+        )
+        mr: (
+            type: margin-right,
+            val: ($value * $add_val) + px
+        )
+        mb: (
+            type: margin-bottom,
+            val: ($value * $add_val) + px
+        )
+        ml: (
+            type: margin-left,
+            val: ($value * $add_val) + px
+        )
+    );
+    @each $type in map-get(map-get($setSpacing,$type),type) {
+        #{$type}: map-get(map-get($setSpacing,$value),val);
+    }
+}
+@each $prefix in $prefixSpacing {
+    @for $index from 1 to 25 {
+      .#{$prefix}-#{$index}{
+        @include getSpacing($prefix, $index, 2);
+      }
+    }
+}
