@@ -18,7 +18,7 @@
 
 .jumbotron-main .jumbotron-row .jumbotron-table {
   padding: 0px;
-  overflow-x: scroll;
+  overflow: hidden;
 }
 
 .jumbotron-main .jumbotron-row .jumbotron-table::-webkit-scrollbar {
@@ -26,6 +26,7 @@
 }
 
 .jumbotron-main .jumbotron-row .jumbotron-table .gop {
+  padding: 0 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,7 +38,16 @@
       flex-wrap: nowrap;
 }
 
+.jumbotron-main .jumbotron-row .jumbotron-table .gop .jumbotron-right {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .jumbotron-main .jumbotron-row .jumbotron-table .gop .content-jumbotron {
+  margin-right: 20px;
+  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,6 +82,7 @@
   font-size: 15px;
   line-height: 1.43;
   color: #484848;
+  padding: 4px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -91,6 +102,12 @@
   .row.jumbotron-row {
     width: 100%;
     margin-left: 0px !important;
+  }
+  .jumbotron-right {
+    overflow: hidden;
+  }
+  .content-jumbotron {
+    width: 100% !important;
   }
 }
 /*# sourceMappingURL=jumbotron.css.map */

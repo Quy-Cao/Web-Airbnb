@@ -30,7 +30,7 @@
 }
 //iccon-star
 .glyphicon-star {
-    color: red;
+    color: #FF385C;
 }
 
 //pagination
@@ -50,7 +50,7 @@
 //jumbotron-heart-icon
 .heart1 {
     @include width-height(32px, 32px);
-    @include position-align(absolute, top, right, 10px, 10px);
+    @include position-align(absolute, top, right, 10px, 0px);
     z-index: 1;
     border-radius: 50%;
     @include background-color(rgba(255, 255, 255, 0.9),#222222);

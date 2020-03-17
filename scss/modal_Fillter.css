@@ -1,0 +1,101 @@
+.modalFillter {
+  height: 577px;
+  width: 780px;
+}
+
+.modalFillter-content {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.modalFillter-header {
+  height: 65px;
+}
+
+.modalFillter-header .close {
+  float: left;
+  font-size: 45px;
+  color: black;
+  opacity: 1;
+}
+
+.modalFillter-header .modal-title {
+  text-align: center;
+  font-size: 24px;
+}
+
+.modalFillter-body {
+  padding: 8px 48px;
+}
+
+.modalFillter-body__title {
+  color: black;
+}
+
+.modalFillter-body__contentAll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modalFillter-body__contentAll .fillter__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 56px;
+}
+
+.modalFillter-body__contentAll .fillter__content-left {
+  width: 559px;
+}
+
+.modalFillter-body__contentAll .fillter__content-right {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modalFillter-body .modalFillterWord {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modalFillter-body .modalFillterWord-left {
+  width: 559px;
+}
+
+.modalFillter-body .modalFillterWord-left a {
+  color: black;
+  text-decoration: underline;
+}
+
+.modalFillter-body .modalFillterWord-right input {
+  float: right;
+}
+
+.modalFillter .modalFillter-reference {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=modal_Fillter.css.map */

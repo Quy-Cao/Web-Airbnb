@@ -1,0 +1,15 @@
+aside {
+  height: 527px;
+  width: 30%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 130px;
+  right: 0px;
+}
+
+@media only screen and (max-width: 1024px) {
+  aside {
+    display: none;
+  }
+}
+/*# sourceMappingURL=aside.css.map */

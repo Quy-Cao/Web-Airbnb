@@ -4,7 +4,7 @@
 
 .list-inline {
     
-    @include margin-padding(25px 0, 0);
+    @include margin-padding(23px 0, 0);
     list-style: none;
     float: right;
     &>li {

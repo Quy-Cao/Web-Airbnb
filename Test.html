@@ -7,31 +7,339 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script src="event.js"></script>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <!-- LINK CSS -->
     <!-- <link rel="stylesheet" href="Test.css"> -->
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <scriptsrc="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <!-- font-family -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <!-- /*<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>*/ -->
+
+    <!-- TimeDatePackage -->
+   
+    
+     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 </head>
 <style>
-
+    /* .formi  {
+    margin: 60px 0 0 0 !important;
+ } */
+ 
+.ui-slider .ui-btn-inner {
+    padding: 4px 0 0 0 !important;
+}
+ 
+.ui-slider-popup {
+    position: absolute !important;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 14px;
+    z-index: 100;
+    opacity: 0.8;
+}
 </style>
 
 <body>
+    <!-- Modal container -->
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- modal Live -->
+    <div id="myModalLive" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-live">
+            <div class="modal-content">
+                <div class="list-check-left">
+                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveFull">
+                    <div class="checkbox-right" id="checkboxRight">
+                        <h4>Toàn bộ nhà</h4>
+                        <p>Tìm một nơi cho riêng bạn</p>
+                    </div>
+                </div>
+                <div class="list-check-left">
+                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLivePrivate">
+                    <div class="checkbox-right">
+                        <h4>
+                            <p>Phòng riêng</p>
+                        </h4>
+                        <p>Có phòng riêng và chia sẻ một số không gian chung</p>
+                    </div>
+                </div>
+                <div class="list-check-left">
+                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveHotel">
+                    <div class="checkbox-right">
+                        <h4>
+                            <p>Phòng khách sạn</p>
+                        </h4>
+                        <p>Có phòng riêng/chia sẻ ở khách sạn boutique, khách sạn giá rẻ và những chỗ ở khác
+                        </p>
+                    </div>
+                </div>
+                <div class="list-check-left">
+                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveGeneral">
+                    <div class="checkbox-right">
+                        <h4>
+                            <p>Phòng chung</p>
+                        </h4>
+                        <p>Ở trong một không gian chia sẻ, như phòng chung</p>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-default delete" id="deleteLive" onclick="deleteLive()">Xoá</button>
+                    <button class="btn btn-info save" onclick="saveLive()">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Guest -->
+    <div id="myModalGuest" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-guest">
+            <div class="modal-content ">  
+                <div class="modal-body">
+                    <div class="modalContentGuest">
+                        <div class="modalGuest-left">
+                            <h4><p>Người lớn</p></h4>
+                            <p>Độ tuổi từ 13 trở lên</p>
+                        </div>
+                        <div class="modalGuest-right">
+                            <div class="modalGuest-right--group">
+                                <button type="button" id="minus1" class="minus" disabled onclick="tinh(1,false)"><h2>-</h2></button>
+                                <div id="number1" class="count">0</div>
+                                <button type="button" id="plus1" class="minus" onclick="tinh(1,true)"><h2>+</h2></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modalContentGuest">
+                        <div class="modalGuest-left">
+                            <h4><p>Trẻ em</p></h4>
+                            <p>Độ tuổi từ 2 - 12</p>
+                        </div>
+                        <div class="modalGuest-right">
+                            <div class="modalGuest-right--group">
+                                <button type="button" id="minus2" class="minus" disabled onclick="tinh(2,false)"><h2>-</h2></button>
+                                <div id="number2" class="count">0</div>
+                                <button type="button" id="plus2" class="minus" onclick="tinh(2,true)"><h2>+</h2></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modalContentGuest">
+                        <div class="modalGuest-left">
+                            <h4><p>Em bé</p></h4>
+                            <p>Độ tuổi dưới 2</p>
+                        </div>
+                        <div class="modalGuest-right">
+                            <div class="modalGuest-right--group">
+                                <button type="button" id="minus3" class="minus" disabled onclick="tinh(3,false)"><h2>-</h2></button>
+                                <div id="number3" class="count">0</div>
+                                <button type="button" id="plus3" class="minus" onclick="tinh(3,true)"><h2>+</h2></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default delete" id="deleteGuest" onclick="deleteGuest()" disabled>Xoá</button>
+                    <button class="btn btn-info save" onclick="saveGuest()">Lưu</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Word -->
+    <div id="myModalWord" class="modal fade" role="dialog">
+        <div class="modal-dialog modalWord">
+            <div class="modal-content modal-padding">
+                <div class="modal-body">
+                    <div class="modalContentWord">
+                        <div class="modalWord-left">
+                            <h4>Bạn đi công tác?</h4>
+                            <p>Khám phá các ngôi nhà và khách sạn boutique được người đi công tác xếp hạng 5 sao</p>
+                        </div>
+                        <div class="modalWord-right">
+                            <input type="checkbox" id="checkWord" onclick="checkWord()">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default delete" id="deleteWord" onclick="deleteWord()" disabled>Xoá</button>
+                    <button class="btn btn-info save" id="saveWord" onclick="saveWord()">Lưu</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Now -->
+    <div id="myModalNow" class="modal fade" role="dialog">
+        <div class="modal-dialog modalNow">
+            <div class="modal-content modal-padding">
+                <div class="modal-body">
+                    <div class="modalContentWord">
+                        <div class="modalWord-left">
+                            <h4>Đặt ngay</h4>
+                            <p>Nhà/phòng cho thuê bạn có thể đặt mà không cần chờ chủ nhà chấp thuận</p>
+                        </div>
+                        <div class="modalWord-right">
+                            <input type="checkbox" id="checkWord">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info save" id="saveNow" onclick="saveNow()">Lưu</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Modal container -->
+
+    <!-- Modal Price -->
+    <div id="myModalPrice" class="modal fade" role="dialog">
+        <div class="modal-dialog modalNow">
+            <div class="modal-content modal-padding">
+                <div class="modal-body">
+                    <div class="modalContentWord">
+                        <div class="modalWord-left">
+
+                        </div>
+                        <div class="modalWord-right">
+                            <form>
+                                <div data-role="rangeslider">
+                                    <input type="range" name="range-1a" id="range-1a" min="0" max="100" value="0" data-popup-enabled="true" data-show-value="true">
+                                    
+                                    <input type="range" name="range-1b" id="range-1b" min="0" max="100" value="100" data-popup-enabled="true" data-show-value="true">
+                                </div>
+                                <label for="range-1a">Rangeslider:</label>
+                                <label for="range-1b">Rangeslider:</label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info save" id="saveNow" onclick="saveNow()">Lưu</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Fillter -->
+    <div id="myModalFillter" class="modal fade" role="dialog">
+        <div class="modal-dialog modalFillter">
+            <div class="modal-content modalFillter-content">
+                <div class="modal-header modalFillter-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Bộ lọc khác</h4>
+                </div>
+                <div class="modal-body modalFillter-body">
+                    <div class="modalFillter-body__title"><h3>Phòng và phòng ngủ</h3></div>
+                    <div class="modalFillter-body__contentAll">
+                        <div class="fillter__content">
+                            <div class="fillter__content-left"><h4>Giường</h4></div>
+                            <div class="fillter__content-right">
+                                <button type="button" id="minusFill1" class="minus" disabled onclick="fillter(1,false)"><h2>-</h2></button>
+                                <div id="numberFill1" class="count">0</div>
+                                <button type="button" id="plusFill1" class="minus" onclick="fillter(1,true)"><h2>+</h2></button>
+                            </div>
+                        </div>
+                        <div class="fillter__content">
+                            <div class="fillter__content-left"><h4>Phòng ngủ</h4></div>
+                            <div class="fillter__content-right">
+                                <button type="button" id="minusFill2" class="minus" disabled onclick="fillter(2,false)"><h2>-</h2></button>
+                                <div id="numberFill2" class="count">0</div>
+                                <button type="button" id="plusFill2" class="minus" onclick="fillter(2,true)"><h2>+</h2></button>
+                            </div>
+                        </div>
+                        <div class="fillter__content">
+                            <div class="fillter__content-left"><h4>Phòng tắm</h4></div>
+                            <div class="fillter__content-right">
+                                <button type="button" id="minusFill3" class="minus" disabled onclick="fillter(3,false)"><h2>-</h2></button>
+                                <div id="numberFill3" class="count">0</div>
+                                <button type="button" id="plusFill3" class="minus" onclick="fillter(3,true)"><h2>+</h2></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="modal-body modalFillter-body">
+                    <div class="modalFillterWord">
+                        <div class="modalFillterWord-left">
+                            <h4>Bạn đi công tác?</h4>
+                            <h5>Khám phá các ngôi nhà và khách sạn boutique được người đi công tác xếp hạng 5 sao</h5>
+                        </div>
+                        <div class="modalWord-right modalFillterWord-right">
+                            <input type="checkbox" id="checkWord">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="modalFillter-reference">
+                    <div class="modal-body modalFillter-body">
+                        <div class="modalFillter-body__title"><h3>Lựa chọn khác</h3></div>
+                        <div class="modalFillterWord">
+                            <div class="modalFillterWord-left">
+                                <div>
+                                    <h4>Bạn đi công tác?</h4>
+                                    <h5>Ở cùng với các chủ nhà được công nhận</h5>
+                                    <a href="#"><h5>Tìm hiểu thêm</h5></a>
+                                </div>
+                                <div>
+                                    <h4>Phù hợp với người khuyết tật</h4>
+                                    <h5>Tìm một nơi ở đáp ứng nhu cầu di chuyển của bạn</h5>
+                                    <a href="#"><h5>Chọn tính năng nơi bạn ở</h5></a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="modalWord-right modalFillterWord-right">
+                        <input type="checkbox" id="checkWord">
+                    </div>
+                </div>
+                
+                <div class="modal-footer modalFillter-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <!--Header 1-->
     <header>
         <nav class="fixed">
@@ -44,8 +352,9 @@
                             </div>
                             <div class="input-group search-group">
                                 <span class="glyphicon  glyphicon-search search-icon"></span>
-                                <input type="text" placeholder="tim kiem" value="Nam Từ liêm . Chỗ ở" class="form-control">
-    
+                                <input type="text" placeholder="tim kiem" value="Nam Từ liêm . Chỗ ở"
+                                    class="form-control">
+
                                 <div class="sub">
                                     <div class="title">Tìm hiểu AIRBBN</div>
                                     <div class="btn btn-group group-sub-btn">
@@ -71,99 +380,53 @@
                 </div>
             </div>
         </nav>
+
+
         <div class="header2">
             <div class="container-fluid menu-button">
-                <div class="btn-group dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Ngày</button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><img src="Anh/1.jpg" alt=""></a></li>
-                    </ul>
-                </div>
-                <div class="btn-group dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Khách</button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><img src="Anh/3.jpg" alt=""></a></li>
-                    </ul>
-                </div>
+                <button type="button" class="btn btn-info btn-header2" 
+                    id="date" name="daterange"><p>Ngày</p></button>
+                <button type="button" class="btn btn-info btn-header2" data-toggle="modal" data-target="#myModalGuest"
+                    id="guest"><p>Khách</p></button>
+                <button type="button" class="btn btn-info btn-header2 word" data-toggle="modal" data-target="#myModalWord"
+                    id="word"><p>Công tác</p></button>
+                <button type="button" class="btn btn-info btn-header2 live" data-toggle="modal" data-target="#myModalLive"
+                    id="liveHouse"><p>Loại nơi ở</p></button>
+                <button type="button" class="btn btn-info btn-header2 price" data-toggle="modal" data-target="#myModalPrice"
+                    id="price"><p>Giá</p></button>
+                <button type="button" class="btn btn-info btn-header2 now" data-toggle="modal" data-target="#myModalNow"
+                    id="now"><p>Đặt ngay</p></button>
+                <button type="button" class="btn btn-info btn-header2 fillter" data-toggle="modal" data-target="#myModalFillter"
+                    id="fillter"><p>Bộ lọc khác</p></button>
+
                 
-                <div class="btn-group btn-nodropdown">
-                <button class="btn btn-default cong-tac">Công tác</button>
-                </div>
-                <div class="btn-group dropdown ">
-                    <button class="btn btn-default dropdown-toggle noi-o" type="button" data-toggle="dropdown">Loại nơi ở</button>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="list-check-left">
-                                <input type="checkbox" value="" class="checkbox-left">
-                                <div class="checkbox-right">
-                                    <h4>Toàn bộ nhà</h4>
-                                    <p>Tìm một nơi cho riêng bạn</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-check-left">
-                                <input type="checkbox" value="" class="checkbox-left">
-                                <div class="checkbox-right">
-                                    <h4><p>Phòng riêng</p></h4>
-                                    <p>Có phòng riêng và chia sẻ một số không gian chung</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-check-left">
-                                <input type="checkbox" value="" class="checkbox-left">
-                                <div class="checkbox-right">
-                                    <h4><p>Phòng khách sạn</p></h4>
-                                    <p>Có phòng riêng/chia sẻ ở khách sạn boutique, khách sạn giá rẻ và những chỗ ở khác</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-check-left">
-                                <input type="checkbox" value="" class="checkbox-left">
-                                <div class="checkbox-right">
-                                    <h4><p>Phòng chung</p></h4>
-                                    <p>Ở trong một không gian chia sẻ, như phòng chung</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li role="presentation" class="divider"></li>
-                        <li>
-                            <button class="btn btn-default delete">Xoá</button>
-                            <button class="btn btn-info save">Lưu</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="btn-group btn-nodropdown">
-                    <button class="btn btn-default">Giá</button>
-                    <button class="btn btn-default">Đặt ngay</button>
-                    <button class="btn btn-default bolockhac">Bộ lọc khác</button>
-                </div>
                 <div class="checkbox-map">
-                    <span class="show-map">Hiển thị bản đồ </span>
+                    <span class="show-map" >Hiển thị bản đồ </span>
                     <div class="center">
-                        <input type="checkbox" name="">
+                        <input class="input-map" onclick="checkMap()" checked type="checkbox" id="checkMap">
                     </div>
                 </div>
-        
-        </div>
+
+            </div>
     </header>
-    
-    
+
+
     <!--content-->
     <div class="container-fluid wrapper">
         <section>
-            <div class="container-fluid clear-top" >
+            <h2><b>Hơn 231 nơi ở</b></h2>
+            <div class="container-fluid clear-top">
                 <div class="row" id="sidebarWrap">
                     <div class="content-left2">
-                        <h2><b>Hơn 231 nơi ở</b></h2>
+                        
                         <!--combinator 1-->
-                        <hr>
-                        <div class="row rowhover">
+                        <hr id="hrFull1">
+                        <div class="row rowhover" id="liveFull1">
                             <div class="col-sm-4 row-img1">
-                                <div class="carousel slide" data-ride="carousel" id="anh1" >
-                                    <a href="#"><div class="heart"><i class="fa fa-heart icon-heart"></i></div></a>
+                                <div class="carousel slide" data-ride="carousel" id="anh1" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
                                     <ol class="carousel-indicators">
                                         <li data-target="#anh1" data-slide-to="0" class="active"></li>
                                         <li data-target="#anh1" data-slide-to="1"></li>
@@ -198,30 +461,41 @@
                             </div>
                             <a href="#">
                                 <div class="col-sm-8 content">
-                                    <h4 class="can-ho">Toàn bộ căn hộ<span class="danhgia"><span
-                                                class="glyphicon glyphicon-star"></span>
-                                            <p1>4,79</p1>(24)
-                                    </span></h4>
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Toàn bộ căn hộ</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>4,79</p1>(24)
+                                            </div>
+                                        </span>
+                                    </h4>
                                     <h3 class="tenphong">2BR/70m2 (8th Floor S3) VINHOMES Kangnam</h3>
-                                    <div class="giuong-phong"><small> 5 khách - 2 phòng - 2 giường - 2 phòng tắm</small></div>
-                                    <div class="giuong-phong"><small>Wifi - điều hòa nhiệt độ - bếp - máy giặt</small> </div>
-                                    
+                                    <div class="giuong-phong"><small> 5 khách - 2 phòng - 2 giường - 2 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - điều hòa nhiệt độ - bếp - máy giặt</small>
+                                    </div>
+
                                     <div class="tienphong">
-                                        <p class="dollar-top"><small class="dollar">$50 </small><i class="fas fa-dollar-sign">37</i>
+                                        <p class="dollar-top"><small class="dollar">$50 </small><i
+                                                class="fas fa-dollar-sign">37</i>
                                             <p2>/đêm</p2>
                                         </p>
-                                        <h4 class="number-sum"><small>82 tổng <i class='far fa-question-circle'></i></small>
+                                        <h4 class="number-sum"><small>82 tổng <i
+                                                    class='far fa-question-circle'></i></small>
                                         </h4>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!--combinator 2-->
-                        <hr>
-                        <div class="row rowhover">
+                        <hr id="hrPrivate1">
+                        <div class="row rowhover" id="livePrivate1">
                             <div class="col-sm-4 row-img1">
-                                <div class="carousel slide" data-ride="carousel" id="anh2">
-                                    <a href="#"><div class="heart"><i class="fa fa-heart icon-heart"></i></div></a>
+                                <div class="carousel slide" data-ride="carousel" id="anh2" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
                                     <ol class="carousel-indicators">
                                         <li data-target="#anh2" data-slide-to="0" class="active"></li>
                                         <li data-target="#anh2" data-slide-to="1"></li>
@@ -256,29 +530,40 @@
                             </div>
                             <a href="#">
                                 <div class="col-sm-8 content">
-                                    <h4 class="can-ho">Toàn bộ phòng riêng dành cho khách<span class="danhgia"><span
-                                                class="glyphicon glyphicon-star"></span>
-                                            <p1>4,90</p1>(175)
-                                        </span></h4>
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p> Toàn bộ phòng riêng dành cho khách</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>4,90</p1>(55)
+                                            </div>
+                                        </span>         
+                                    </h4>
                                     <h3 class="tenphong">HANOI OLD STYLE stadio local streetfood quarter</h3>
-                                    <div class="giuong-phong"><small> 3 khách - 1 phòng - 1 giường - 1 phòng tắm</small></div>
-                                    <div class="giuong-phong"><small>Wifi - điều hòa nhiệt độ - bếp - máy giặt</small> </div>
+                                    <div class="giuong-phong"><small> 3 khách - 1 phòng - 1 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - điều hòa nhiệt độ - bếp - máy giặt</small>
+                                    </div>
                                     <div class="tienphong">
-                                        <p class="dollar-top"><small class="dollar">$20 </small><i class="fas fa-dollar-sign">13</i>
+                                        <p class="dollar-top"><small class="dollar">$20 </small><i
+                                                class="fas fa-dollar-sign">13</i>
                                             <p2>/đêm</p2>
                                         </p>
-                                        <h4 class="number-sum"><small>70 tổng <i class='far fa-question-circle'></i></small>
+                                        <h4 class="number-sum"><small>70 tổng <i
+                                                    class='far fa-question-circle'></i></small>
                                         </h4>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!--combinator 3-->
-                        <hr>
-                        <div class="row rowhover">
+                        <hr id="hrHotel1">
+                        <div class="row rowhover" id="liveHotel1">
                             <div class="col-sm-4 row-img1">
-                                <div class="carousel slide" data-ride="carousel" id="anh3">
-                                    <a href="#"><div class="heart"><i class="fa fa-heart icon-heart"></i></div></a>
+                                <div class="carousel slide" data-ride="carousel" id="anh3" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
                                     <ol class="carousel-indicators">
                                         <li data-target="#anh3" data-slide-to="0" class="active"></li>
                                         <li data-target="#anh3" data-slide-to="1"></li>
@@ -313,29 +598,42 @@
                             </div>
                             <a href="#">
                                 <div class="col-sm-8 content">
-                                    <h4 class="can-ho">Toàn bộ căn hộ<span class="danhgia"><span
-                                                class="glyphicon glyphicon-star"></span>
-                                            <p1>4,73</p1>(179)
-                                        </span></h4>
+                                    <h4 class="can-ho">
+                                        <span class="nameLive">
+                                            <p>Phòng khách sạn</p>
+                                        </span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>4,73</p1>(179)
+                                            </div>
+                                        </span>
+                                    </h4>
                                     <h3 class="tenphong">Quee's House of HaNoi/Stulist, Cozy and Friendy</h3>
-                                    <div class="giuong-phong"><small> 3 khách - 1 phòng - 2 giường - 1 phòng tắm</small></div>
-                                    <div class="giuong-phong"><small>Wifi - điều hòa nhiệt độ - bếp - máy giặt</small> </div>
+                                    <div class="giuong-phong"><small> 3 khách - 1 phòng - 2 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - điều hòa nhiệt độ - bếp - máy giặt</small>
+                                    </div>
                                     <div class="tienphong">
-                                        <p class="dollar-top"><small class="dollar">$29 </small><i class="fas fa-dollar-sign">21</i>
+                                        <p class="dollar-top"><small class="dollar">$29 </small><i
+                                                class="fas fa-dollar-sign">21</i>
                                             <p2>/đêm</p2>
                                         </p>
-                                        <h4 class="number-sum"><small>76 tổng <i class='far fa-question-circle'></i></small>
+                                        <h4 class="number-sum"><small>76 tổng <i
+                                                    class='far fa-question-circle'></i></small>
                                         </h4>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!--combinator 4-->
-                        <hr>
-                        <div class="row rowhover">
+                        <hr id="hrGeneral1">
+                        <div class="row rowhover" id="liveGeneral1">
                             <div class="col-sm-4 row-img1">
-                                <div class="carousel slide" data-ride="carousel" id="anh4">
-                                    <a href="#"><div class="heart"><i class="fa fa-heart icon-heart"></i></div></a>
+                                <div class="carousel slide" data-ride="carousel" id="anh4" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
                                     <ol class="carousel-indicators">
                                         <li data-target="#anh4" data-slide-to="0" class="active"></li>
                                         <li data-target="#anh4" data-slide-to="1"></li>
@@ -370,29 +668,40 @@
                             </div>
                             <a href="#">
                                 <div class="col-sm-8 content">
-                                    <h4 class="can-ho"><span class="labal-tieude">CHỦ NHÀ SIÊU CẤP</span> Toàn bộ căn hộ<span
-                                            class="danhgia"><span class="glyphicon glyphicon-star"></span>
-                                            <p1>4,88</p1>(41)
-                                        </span></h4>
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Phòng chung</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>4,88</p1>(41)
+                                            </div>
+                                        </span>
+                                    </h4>
                                     <h3 class="tenphong">[30% off] Jason's house + pool, gym, free pocket wifi</h3>
-                                    <div class="giuong-phong"><small> 2 khách - 1 ngủ - 1 giường - 1 phòng tắm đầy đủ và 1 phòng vệ sinh ...</small></div>
-                                    <div class="giuong-phong"><small>Wifi - điều hòa nhiệt độ - bếp - máy giặt</small> </div>
+                                    <div class="giuong-phong"><small> 2 khách - 1 ngủ - 1 giường - 1 phòng tắm đầy đủ và
+                                            1 phòng vệ sinh ...</small></div>
+                                    <div class="giuong-phong"><small>Wifi - điều hòa nhiệt độ - bếp - máy giặt</small>
+                                    </div>
                                     <div class="tienphong">
-                                        <p class="dollar-top"><small class="dollar">$18 </small><i class="fas fa-dollar-sign">13</i>
+                                        <p class="dollar-top"><small class="dollar">$18 </small><i
+                                                class="fas fa-dollar-sign">13</i>
                                             <p2>/đêm</p2>
                                         </p>
-                                        <h4 class="number-sum"><small>50 tổng <i class='far fa-question-circle'></i></small>
+                                        <h4 class="number-sum"><small>50 tổng <i
+                                                    class='far fa-question-circle'></i></small>
                                         </h4>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <!--combinator 5-->
-                        <hr>
-                        <div class="row rowhover">
+                        <hr id="hrFull2">
+                        <div class="row rowhover" id="liveFull2">
                             <div class="col-sm-4 row-img1">
-                                <div class="carousel slide" data-ride="carousel" id="anh5">
-                                    <a href="#"><div class="heart"><i class="fa fa-heart icon-heart"></i></div></a>
+                                <div class="carousel slide" data-ride="carousel" id="anh5" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
                                     <ol class="carousel-indicators">
                                         <li data-target="#anh5" data-slide-to="0" class="active"></li>
                                         <li data-target="#anh5" data-slide-to="1"></li>
@@ -427,94 +736,319 @@
                             </div>
                             <a href="#">
                                 <div class="col-sm-8 content">
-                                    <h4 class="can-ho">Toàn bộ căn hộ<span class="danhgia"><span
-                                                class="glyphicon glyphicon-star"></span>
-                                            <p1>5,0</p1>(30)
-                                        </span></h4>
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Toàn bộ căn hộ</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>5,0</p1>(30)
+                                            </div>
+                                        </span>
+                                    </h4>
                                     <h3 class="tenphong">A Cosy Apartment in @Vinhomes greenbay @1br HaNoi</h3>
-                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small></div>
-                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small> </div>
+                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small>
+                                    </div>
                                     <div class="tienphong">
-                                        <p class="dollar-top"><small class="dollar">$29 </small><i class="fas fa-dollar-sign">23</i>
+                                        <p class="dollar-top"><small class="dollar">$29 </small><i
+                                                class="fas fa-dollar-sign">23</i>
                                             <p2>/đêm</p2>
                                         </p>
-                                        <h4 class="number-sum"><small>76 tổng <i class='far fa-question-circle'></i></small>
+                                        <h4 class="number-sum"><small>76 tổng <i
+                                                    class='far fa-question-circle'></i></small>
                                         </h4>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        
+                        <!--combinator 6-->
+                        <hr id="hrHotel2">
+                        <div class="row rowhover" id="liveHotel2">
+                            <div class="col-sm-4 row-img1">
+                                <div class="carousel slide" data-ride="carousel" id="anh5" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#anh5" data-slide-to="0" class="active"></li>
+                                        <li data-target="#anh5" data-slide-to="1"></li>
+                                        <li data-target="#anh5" data-slide-to="2"></li>
+                                        <li data-target="#anh5" data-slide-to="3"></li>
+                                        <li data-target="#anh5" data-slide-to="4"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active ">
+                                            <a href="#"><img src="Anh/6.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/5.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/8.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/4.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/13.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <a href="#anh5" class="left carousel-control carousel-prev" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a href="#anh5" class="right carousel-control carousel-next" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="col-sm-8 content">
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Phòng khách sạn</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>5,0</p1>(30)
+                                            </div>
+                                        </span>
+                                    </h4>
+                                    <h3 class="tenphong">A Cosy Apartment in @Vinhomes greenbay @1br HaNoi</h3>
+                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small>
+                                    </div>
+                                    <div class="tienphong">
+                                        <p class="dollar-top"><small class="dollar">$29 </small><i
+                                                class="fas fa-dollar-sign">23</i>
+                                            <p2>/đêm</p2>
+                                        </p>
+                                        <h4 class="number-sum"><small>76 tổng <i
+                                                    class='far fa-question-circle'></i></small>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--combinator 7-->
+                        <hr id="hrPrivate2">
+                        <div class="row rowhover" id="livePrivate2">
+                            <div class="col-sm-4 row-img1">
+                                <div class="carousel slide" data-ride="carousel" id="anh5" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#anh5" data-slide-to="0" class="active"></li>
+                                        <li data-target="#anh5" data-slide-to="1"></li>
+                                        <li data-target="#anh5" data-slide-to="2"></li>
+                                        <li data-target="#anh5" data-slide-to="3"></li>
+                                        <li data-target="#anh5" data-slide-to="4"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active ">
+                                            <a href="#"><img src="Anh/2.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/6.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/11.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/3.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/13.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <a href="#anh5" class="left carousel-control carousel-prev" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a href="#anh5" class="right carousel-control carousel-next" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="col-sm-8 content">
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Toàn bộ phòng riêng dành cho khách</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>5,0</p1>(30)
+                                            </div>
+                                        </span>
+                                    </h4>
+                                    <h3 class="tenphong">A Cosy Apartment in @Vinhomes greenbay @1br HaNoi</h3>
+                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small>
+                                    </div>
+                                    <div class="tienphong">
+                                        <p class="dollar-top"><small class="dollar">$29 </small><i
+                                                class="fas fa-dollar-sign">23</i>
+                                            <p2>/đêm</p2>
+                                        </p>
+                                        <h4 class="number-sum"><small>76 tổng <i
+                                                    class='far fa-question-circle'></i></small>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--combinator 8-->
+                        <hr id="hrFull3">
+                        <div class="row rowhover" id="liveFull3">
+                            <div class="col-sm-4 row-img1">
+                                <div class="carousel slide" data-ride="carousel" id="anh5" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#anh5" data-slide-to="0" class="active"></li>
+                                        <li data-target="#anh5" data-slide-to="1"></li>
+                                        <li data-target="#anh5" data-slide-to="2"></li>
+                                        <li data-target="#anh5" data-slide-to="3"></li>
+                                        <li data-target="#anh5" data-slide-to="4"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active ">
+                                            <a href="#"><img src="Anh/13.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/5.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/1.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/6.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/3.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <a href="#anh5" class="left carousel-control carousel-prev" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a href="#anh5" class="right carousel-control carousel-next" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="col-sm-8 content">
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Toàn bộ căn hộ</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>5,0</p1>(30)
+                                            </div>
+                                        </span>
+                                    </h4>
+                                    <h3 class="tenphong">A Cosy Apartment in @Vinhomes greenbay @1br HaNoi</h3>
+                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small>
+                                    </div>
+                                    <div class="tienphong">
+                                        <p class="dollar-top"><small class="dollar">$29 </small><i
+                                                class="fas fa-dollar-sign">23</i>
+                                            <p2>/đêm</p2>
+                                        </p>
+                                        <h4 class="number-sum"><small>76 tổng <i
+                                                    class='far fa-question-circle'></i></small>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    
-                    
                 </div>
             </div><br><br><br>
             <!--Jumbotron-->
-            <div class="jumbotron-main">
+            <div class="jumbotron-main" id="jumbotron">
                 <div class="jumbotron">
                     <div class="row">
                         <div class="row jumbotron-row">
                             <div class="col-lg-4 jumbotron-left">
-                                <span class="jumbotron-tieude">Giới thiệu Airbnb Phiêu lưu</span>
-                                <p class="jumbotron-nd">Các chuyến đi nhiều ngày do chuyên gia địa phương dẫn dắt – đã bao gồm
-                                    các hoạt động, bữa ăn và chỗ ở.</p>
-                                <button class="hientatca an-button1">Hiện tất cả</button>
+                                <div class="jumbotron-content">
+                                    <span class="jumbotron-tieude">Giới thiệu Airbnb Phiêu lưu</span>
+                                    <p class="jumbotron-nd">Các chuyến đi nhiều ngày do chuyên gia địa phương dẫn dắt – đã
+                                        bao gồm
+                                        các hoạt động, bữa ăn và chỗ ở.</p>
+                                    <button type="button" class="hientatca an-button1">Hiện tất cả</button>
+                                </div>
                             </div>
-        
+
                             <div class="col-lg-8 jumbotron-table">
                                 <div class="flex-box">
                                     <div class="gop">
-                                        <div class="content-jumbotron">
-                                            <a href="#"><div class="heart1"><i class="fa fa-heart icon-heart"></i></div></a>
-                                            <a href="#"><img src="Anh/1.jpg" alt="" class="img2"></a>
-                                            <a href="#" class="dayphuluu4" data-toggle="tooltip"
+                                        <div class="jumbotron-right">
+                                            <div class="content-jumbotron">
+                                                <a href="#">
+                                                    <div class="heart1"><i class="fa fa-heart icon-heart"></i></div>
+                                                </a>
+                                                <a href="#"><img src="Anh/1.jpg" alt="" class="img2"></a>
+                                                <a href="#" class="dayphuluu4" data-toggle="tooltip"
                                                     title="3 ngày phưu lưu">2 NGÀY PHIÊU LƯU</a>
-                                            <a href="#" class="dayphuluu5" data-toggle="tooltip"
+                                                <a href="#" class="dayphuluu5" data-toggle="tooltip"
                                                     title="Trải nghiệm Treking và homestay cùng người dân và bản địa sapa">Trải
                                                     nghiệm Treking và homestay </a>
-                                            <a href="#" class="dayphuluu6"><span>Từ 82$/người</span></a>
-                                            
-                                        </div>
-                                        <div class="content-jumbotron">
-                                            <a href="#"><div class="heart1"><i class="fa fa-heart icon-heart"></i></div></a>
-                                            <a href="#"><img src="Anh/5.jpg" alt="" class="img2"></a>
-                                            <a href="#" class="dayphuluu4" data-toggle="tooltip"
+                                                <a href="#" class="dayphuluu6"><span>Từ 82$/người</span></a>
+    
+                                            </div>
+                                            <div class="content-jumbotron">
+                                                <a href="#">
+                                                    <div class="heart1"><i class="fa fa-heart icon-heart"></i></div>
+                                                </a>
+                                                <a href="#"><img src="Anh/5.jpg" alt="" class="img2"></a>
+                                                <a href="#" class="dayphuluu4" data-toggle="tooltip"
                                                     title="3 ngày phưu lưu">3 NGÀY PHIÊU LƯU</a>
-                                            <a href="#" class="dayphuluu5" data-toggle="tooltip"
-                                                title="Discover majestic  of Lan Ha Bay city...  ">Discover majestic of Lan Ha
-                                                Bay city... </a>
-                                            <a href="#" class="dayphuluu6"><span>Từ 306$/người</span></a>
-                                        </div>
-                                        <div class="content-jumbotron">
-                                            <a href="#"><div class="heart1"><i class="fa fa-heart icon-heart"></i></div></a>
-                                            <a href="#"><img src="Anh/13.jpg" alt="" class="img2"></a>
-                                            <a href="#" class="dayphuluu4" data-toggle="tooltip"
-                                                    title="3 ngày phưu lưu">4 NGÀY PHIÊU LƯU</a>
+                                                <a href="#" class="dayphuluu5" data-toggle="tooltip"
+                                                    title="Discover majestic  of Lan Ha Bay city...  ">Discover majestic of
+                                                    Lan Ha
+                                                    Bay city... </a>
+                                                <a href="#" class="dayphuluu6"><span>Từ 306$/người</span></a>
+                                            </div>
+                                            <div class="content-jumbotron">
+                                                <a href="#">
+                                                    <div class="heart1"><i class="fa fa-heart icon-heart"></i></div>
+                                                </a>
+                                                    <a href="#"><img src="Anh/13.jpg" alt="" class="img2"></a>
+                                                    <a href="#" class="dayphuluu4" data-toggle="tooltip"
+                                                        title="3 ngày phưu lưu">4 NGÀY PHIÊU LƯU</a>
                                                     <td><a href="#" class="dayphuluu5" data-toggle="tooltip"
-                                                        title="Epic motorbike trip though VietNam">Epic motorbike trip though
-                                                        VietNam</a></td>
-                                            <a href="#" class="dayphuluu6"><span>Từ 122$/người</span></a>
-                                        </div>         
-                                    </div>                                 
+                                                            title="Epic motorbike trip though VietNam">Epic motorbike trip
+                                                            though
+                                                            VietNam</a></td>
+                                                    <a href="#" class="dayphuluu6"><span>Từ 122$/người</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <button class="hientatca an-button2">Hiện tất cả</button>
-                        </div>   
+                        </div>
                     </div>
                 </div>
             </div>
             <br><br>
-        
-        
+
+
             <div class="container-fluid clear-top">
                 <div class="row">
-                    <div class="">
-                        <!--combinator 6-->
-                        <div class="row rowhover">
+                    <div class="content-left2">
+                        <!--combinator 9-->
+                        <div class="row rowhover" id="liveFull4">
                             <div class="col-sm-4 row-img1">
-                                <div class="carousel slide" data-ride="carousel" id="anh6">
-                                    <a href="#"><div class="heart"><i class="fa fa-heart icon-heart"></i></div></a>
+                                <div class="carousel slide" data-ride="carousel" id="anh6" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
                                     <ol class="carousel-indicators">
                                         <li data-target="#anh6" data-slide-to="0" class="active"></li>
                                         <li data-target="#anh6" data-slide-to="1"></li>
@@ -549,30 +1083,41 @@
                             </div>
                             <a href="#">
                                 <div class="col-sm-8 content">
-                                    <h4 class="can-ho">Toàn bộ căn hộ<span class="danhgia"><span
-                                                class="glyphicon glyphicon-star"></span>
-                                            <p1>4,79</p1>(19)
-                                        </span></h4>
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Toàn bộ căn hộ</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>4,79</p1>(19)
+                                            </div>
+                                        </span>
+                                    </h4>
                                     <h3 class="tenphong">A-Home Green Bya Luxury Apartment 1.2</h3>
-                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small></div>
-                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small> </div>
+                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small>
+                                    </div>
                                     <div class="tienphong">
-                                        <p class="dollar-top"><small class="dollar">$35 </small><i class="fas fa-dollar-sign">24</i>
+                                        <p class="dollar-top"><small class="dollar">$35 </small><i
+                                                class="fas fa-dollar-sign">24</i>
                                             <p2>/đêm</p2>
                                         </p>
-                                        <h4 class="number-sum"><small>56 tổng <i class='far fa-question-circle'></i></small>
+                                        <h4 class="number-sum"><small>56 tổng <i
+                                                    class='far fa-question-circle'></i></small>
                                         </h4>
                                     </div>
                                 </div>
                             </a>
                         </div>
-        
-                        <!--combinator 7-->
-                        <hr>
-                        <div class="row rowhover">
+
+                        <!--combinator 10-->
+                        <hr id="hrHotel3">
+                        <div class="row rowhover" id="liveHotel3">
                             <div class="col-sm-4 row-img1">
-                                <div class="carousel slide" data-ride="carousel" id="anh7">
-                                    <a href="#"><div class="heart"><i class="fa fa-heart icon-heart"></i></div></a>
+                                <div class="carousel slide" data-ride="carousel" id="anh7" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
                                     <ol class="carousel-indicators">
                                         <li data-target="#anh7" data-slide-to="0" class="active"></li>
                                         <li data-target="#anh7" data-slide-to="1"></li>
@@ -607,24 +1152,169 @@
                             </div>
                             <a href="#">
                                 <div class="col-sm-8 content">
-                                    <h4 class="can-ho">Toàn bộ căn hộ<span class="danhgia"><span
-                                                class="glyphicon glyphicon-star"></span>
-                                            <p1>4,86</p1>(35)
-                                        </span></h4>
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Phòng khách sạn</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>4,52</p1>(35)
+                                            </div>
+                                        </span>
+                                    </h4>
                                     <h3 class="tenphong">ZIN HOUSE NICE VIEW near Keangnam</h3>
-                                    <div class="giuong-phong"><small> 2 khách - phòng stadio - 1 giường - 1 phòng tắm</small></div>
-                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small> </div>
+                                    <div class="giuong-phong"><small> 2 khách - phòng stadio - 1 giường - 1 phòng
+                                            tắm</small></div>
+                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small>
+                                    </div>
                                     <div class="tienphong">
-                                        <p class="dollar-top"><small class="dollar">$33 </small><i class="fas fa-dollar-sign">26</i>
+                                        <p class="dollar-top"><small class="dollar">$33 </small><i
+                                                class="fas fa-dollar-sign">26</i>
                                             <p2>/đêm</p2>
                                         </p>
-                                        <h4 class="number-sum"><small>56 tổng <i class='far fa-question-circle'></i></small>
+                                        <h4 class="number-sum"><small>56 tổng <i
+                                                    class='far fa-question-circle'></i></small>
                                         </h4>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <br>
+                        <!--combinator 11-->
+                        <hr id="hrPrivate3">
+                        <div class="row rowhover" id="livePrivate3">
+                            <div class="col-sm-4 row-img1">
+                                <div class="carousel slide" data-ride="carousel" id="anh5" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#anh5" data-slide-to="0" class="active"></li>
+                                        <li data-target="#anh5" data-slide-to="1"></li>
+                                        <li data-target="#anh5" data-slide-to="2"></li>
+                                        <li data-target="#anh5" data-slide-to="3"></li>
+                                        <li data-target="#anh5" data-slide-to="4"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active ">
+                                            <a href="#"><img src="Anh/2.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/4.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/6.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/8.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/11.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <a href="#anh5" class="left carousel-control carousel-prev" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a href="#anh5" class="right carousel-control carousel-next" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="col-sm-8 content">
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Toàn bộ phòng riêng dành cho khách</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>5,0</p1>(30)
+                                            </div>
+                                        </span>
+                                    </h4>
+                                    <h3 class="tenphong">A Cosy Apartment in @Vinhomes greenbay @1br HaNoi</h3>
+                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small>
+                                    </div>
+                                    <div class="tienphong">
+                                        <p class="dollar-top"><small class="dollar">$29 </small><i
+                                                class="fas fa-dollar-sign">23</i>
+                                            <p2>/đêm</p2>
+                                        </p>
+                                        <h4 class="number-sum"><small>76 tổng <i
+                                                    class='far fa-question-circle'></i></small>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--combinator 12-->
+                        <hr id="hrGeneral2">
+                        <div class="row rowhover" id="liveGeneral2">
+                            <div class="col-sm-4 row-img1">
+                                <div class="carousel slide" data-ride="carousel" id="anh5" data-interval="false">
+                                    <a href="#">
+                                        <div class="heart"><i class="fa fa-heart icon-heart"></i></div>
+                                    </a>
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#anh5" data-slide-to="0" class="active"></li>
+                                        <li data-target="#anh5" data-slide-to="1"></li>
+                                        <li data-target="#anh5" data-slide-to="2"></li>
+                                        <li data-target="#anh5" data-slide-to="3"></li>
+                                        <li data-target="#anh5" data-slide-to="4"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active ">
+                                            <a href="#"><img src="Anh/4.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/2.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/6.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/8.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#"><img src="Anh/3.jpg" alt="1" class="img-rounded"></a>
+                                        </div>
+                                        <a href="#anh5" class="left carousel-control carousel-prev" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a href="#anh5" class="right carousel-control carousel-next" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="col-sm-8 content">
+                                    <h4 class="can-ho">
+                                        <span class="nameLive"><p>Phòng chung</p></span>
+                                        <span class="danhgia">
+                                            <div class="danhgia-right">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p1>5,0</p1>(30)
+                                            </div>
+                                        </span>
+                                    </h4>
+                                    <h3 class="tenphong">A Cosy Apartment in @Vinhomes greenbay @1br HaNoi</h3>
+                                    <div class="giuong-phong"><small> 2 khách - 1 phòng - 2 giường - 1 phòng tắm</small>
+                                    </div>
+                                    <div class="giuong-phong"><small>Wifi - Điều hòa nhiệt độ - Bếp - Máy giặt</small>
+                                    </div>
+                                    <div class="tienphong">
+                                        <p class="dollar-top"><small class="dollar">$29 </small><i
+                                                class="fas fa-dollar-sign">23</i>
+                                            <p2>/đêm</p2>
+                                        </p>
+                                        <h4 class="number-sum"><small>76 tổng <i
+                                                    class='far fa-question-circle'></i></small>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                         <!--Menu sang trang moi Pagination-->
                         <div class="pagination-page">
                             <nav aria-label="Page navigation" class="text-center">
@@ -649,18 +1339,19 @@
                             <div class="pagination-footer">
                                 <p class="pagination-footer1">19 – 36/Hơn 300 chỗ ở</p>
                                 <br>
-                                <p class="pagination-footer2">Nhập ngày để xem giá đầy đủ. Áp dụng phụ phí. Có thể phát sinh thuế.</p><br>
+                                <p class="pagination-footer2">Nhập ngày để xem giá đầy đủ. Áp dụng phụ phí. Có thể phát
+                                    sinh thuế.</p><br>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <aside>
-            <div class="anhmap" id="sidebar"></div>      
+        <aside id="aside">
+            <div class="anhmap"  id="imgMap"></div>
         </aside>
     </div>
-    
+
 
     <!-- Test -->
     <footer>
@@ -716,7 +1407,8 @@
             <hr>
             <div class="footer-finish">
                 <div class="footer-left">
-                    <i class="fab fa-airbnb"></i> <i class="far fa-copyright"></i><span> 2020 Airbnb, Inc. All rights reserved</span><span class="cham">.</span>
+                    <i class="fab fa-airbnb"></i> <i class="far fa-copyright"></i><span> 2020 Airbnb, Inc. All rights
+                        reserved</span><span class="cham">.</span>
                     <span><a href="#">Điều khoản</a></span><span class="cham">.</span>
                     <span><a href="#">Quyền riêng tư</a></span><span class="cham">.</span>
                     <span><a href="#">Bản đồ địa điểm</a></span>
@@ -729,8 +1421,16 @@
             </div>
         </div>
     </footer>
+    <!-- Datetime -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    
+    <script src="js/lives.js"></script>
+    <script src="js/date.js"></script>
+    <script src="js/guest.js"></script>
+    <script src="js/checkMap.js"></script>
+    <script src="js/word.js"></script>
+    <script src="js/price.js"></script>
 </body>
 
 </html>
-
-

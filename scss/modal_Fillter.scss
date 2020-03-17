@@ -1,0 +1,67 @@
+@import "mixin.scss";
+@import "responsive.scss";
+@import "variables.scss";
+
+.modalFillter {
+    height: 577px;
+    width: 780px;
+    
+    &-content {
+        height: 100%;
+        overflow-y: scroll;
+    }
+    &-header {
+        height: 65px;
+        & .close {
+            float: left;
+            font-size: 45px;
+            color: black;
+            opacity: 1;
+        }
+        & .modal-title {
+            text-align: center;
+            font-size: 24px;
+        }
+    }
+    &-body {
+        padding: 8px 48px;
+        &__title {
+            color: black;
+        }
+        &__contentAll {
+            display: flex;
+            flex-direction: column;
+            & .fillter__content {
+                display: flex;
+                align-items: center;
+                height: 56px;
+                &-left {
+                    width: 559px;
+                }
+                &-right {
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+        & .modalFillterWord {
+            display: flex;
+            align-items: center;
+            &-left {
+                width: 559px;
+                & a {
+                    color: black;
+                    text-decoration: underline;      
+                }
+            }
+            &-right input{
+                float: right;
+            }
+        }
+    }
+    & .modalFillter-reference {
+        display: flex;
+        align-items: center;
+    }
+}

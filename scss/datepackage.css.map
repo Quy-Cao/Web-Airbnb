@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,AAAA,IAAI,AAAA,cAAc,AAAA,UAAU,CAAC;EACzC,QAAQ,EAAE,gBAAgB;EAC1B,IAAI,EAAE,eAAe;EACrB,GAAG,EAAE,gBAAgB;CACxB",
+    "sources": [
+        "datepackage.scss"
+    ],
+    "names": [],
+    "file": "datepackage.css"
+}

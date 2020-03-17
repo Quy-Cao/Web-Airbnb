@@ -5,15 +5,27 @@
 
 .rowhover{     
     .col-sm-8.content {
-        @include margin-padding(15px 0 0 0, 0 30px 0 0);
+        // @include margin-padding(0 0 0 0, 0 30px 0 0);
+        padding-left: 0px;
+        padding-right: 30px;
         h4.can-ho {
+            display: flex;
+            height: 23px;
             @include fontsize-lineh(16px, 1.43, $fontColor);
+            .nameLive {
+                width: 70%;
+                overflow: hidden;
+            }
             p1 {
                 @include fontsize-lineh(18px, 1.43, black);
             }
-            span.danhgia {
+            .danhgia {
                 float: right;
                 font-size: 15px;
+                flex-grow: 1;
+                &-right {
+                    float: right;
+                }
             }
             span.labal-tieude {
                 @include background-color(white, black);
@@ -24,6 +36,9 @@
         }
         .tenphong {
             color: black;
+            overflow: hidden;
+            height: 26px;
+            margin-top: 10px !important;
         }
         .giuong-phong {
             color: #484848 ;
@@ -75,18 +90,35 @@
         width: 100%;
     }
     .col-sm-8.content {
-        padding-right: 0px;
-        padding-left: 0;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
     }
     .row {
         margin-right: 0;
         margin-left: 0;
     }
 }
-
+@include responsive_768() {
+    div .rowhover {
+        display: flex;
+        
+    }
+    .col-sm-4.row-img1 {
+        width: 50%;
+    }
+    .col-sm-8.content {
+        width: 100%;
+    }
+}
 @include responsive_640() {
     .row.rowhover {
+        display: flex;
+        flex-direction: column;
         margin-left: 0px;
+    }
+    .row-img1 {
+        width: 100% !important;
+        padding-right: 0px !important;
     }
     .tienphong {
         float: left !important;

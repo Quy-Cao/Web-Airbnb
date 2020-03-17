@@ -1,0 +1,110 @@
+.sub-button {
+  padding: 12px 18px;
+  margin: 0px 7px;
+  border: 1px solid #bda7a7;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.sub-button:hover {
+  border: 1px solid black;
+}
+
+.group-sub-btn {
+  padding: 8px 32px;
+  margin: 0px 0px 16px 16px;
+  display: inline-block;
+  cursor: pointer;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.group-sub-btn .color-black {
+  background-color: black;
+  color: white;
+}
+
+.btn-group {
+  margin: 6px 0px;
+}
+
+.btn-group button.btn.btn-default {
+  border-radius: 30px !important;
+  padding: 8px 16px;
+  margin: 0 4px;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  line-height: 18px !important;
+}
+
+.btn-group button.btn.btn-default:hover {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.btn-group button.btn.btn-default:focus {
+  outline: none;
+}
+
+.jumbotron-left .hientatca.an-button1 {
+  background-color: white;
+  padding: 11px 21px;
+  margin: 27px 0;
+  border: 1px solid #d6d2d2;
+  border-radius: 7px;
+  color: black;
+  font-size: 20px;
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hientatca.an-button2 {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .btn-nodropdown button:nth-last-child(2), .btn-nodropdown button:nth-last-child(3) {
+    display: none;
+  }
+  button.hientatca.an-button1 {
+    display: none;
+  }
+  button.hientatca.an-button2 {
+    display: block !important;
+    background-color: white;
+    color: black;
+    margin: 27px 0px;
+    padding: 11px 21px;
+    border: 1px solid #d6d2d2;
+    border-radius: 7px;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+  }
+  .btn-group .btn-default {
+    background-color: #fff;
+    color: #a59393;
+    border-color: #ccc;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .sub .group-sub-btn .sub-button {
+    margin: 4px 7px !important;
+  }
+  button.btn.btn-default.cong-tac {
+    display: none;
+  }
+  button.btn.btn-default.dropdown-toggle.noi-o {
+    display: none;
+  }
+  button.btn.btn-default.bolockhac {
+    margin-left: -9px;
+  }
+  button.hientatca.an-button2 {
+    width: 100%;
+    background: #eeeeee;
+    border-color: black;
+  }
+}
+/*# sourceMappingURL=button.css.map */

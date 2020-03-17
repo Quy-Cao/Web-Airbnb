@@ -1,0 +1,56 @@
+ul.dropdown-menu {
+  top: 45px;
+  width: 350px;
+  border-radius: 15px;
+}
+
+ul.dropdown-menu .list-check-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+ul.dropdown-menu .list-check-left .checkbox-left {
+  height: 20px;
+  width: 20%;
+  margin-top: 23px;
+}
+
+ul.dropdown-menu .list-check-left .checkbox-right {
+  width: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+ul.dropdown-menu .delete {
+  border: none;
+  border-radius: -9px;
+  color: black;
+  text-decoration: underline;
+  margin: 0px 30px;
+}
+
+ul.dropdown-menu .delete:hover {
+  background-color: #f5f2f2;
+}
+
+ul.dropdown-menu .save {
+  background-color: black;
+  border: 1px;
+  border-radius: 10px;
+  float: right;
+  margin: 0 30px;
+  padding: 7px 17px;
+}
+
+ul.dropdown-menu .save:hover {
+  background-color: black;
+}
+/*# sourceMappingURL=dropdown.css.map */

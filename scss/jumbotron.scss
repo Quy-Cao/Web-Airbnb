@@ -20,13 +20,20 @@
         }
         .jumbotron-table {
             padding: 0px;
-            overflow-x: scroll;
+            overflow: hidden;
             &::-webkit-scrollbar { 
                 display: block; 
             }
             .gop{
+                padding: 0 30px;
                 @include display-flex(row, nowrap);
+                .jumbotron-right {
+                    width: 100%;
+                    display: flex;
+                }
                 .content-jumbotron {
+                    margin-right: 20px;
+                    width: 30%;
                     @include display-flex(column, nowrap);
                     position: relative;
                     & a{
@@ -46,6 +53,7 @@
                     }
                     .dayphuluu6 {
                         @include fontsize-lineh(15px, 1.43, $fontColor);
+                        padding: 4px;
                     }
                 }
             }
@@ -70,5 +78,11 @@
     .row.jumbotron-row {
         width: 100%;
         margin-left: 0px !important;
+    }
+    .jumbotron-right {
+        overflow: hidden;
+    }
+    .content-jumbotron {
+        width: 100% !important;
     }
 }

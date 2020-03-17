@@ -1,0 +1,52 @@
+.modal-padding {
+  padding: 0 20px !important;
+}
+
+.modalWord {
+  width: 360px;
+  position: fixed;
+  top: 105px;
+  left: 185px;
+}
+
+.modalContentWord {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modalWord-left {
+  width: 254px;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.modalWord-right {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 10px;
+}
+
+button#deleteWord {
+  margin-left: -10px !important;
+}
+
+button#saveWord {
+  margin-right: -10px !important;
+}
+
+.modalNow {
+  width: 360px;
+  position: fixed;
+  top: 105px;
+  left: 470px;
+}
+
+button#saveNow {
+  margin-right: 0px;
+}
+/*# sourceMappingURL=modal_Word.css.map */

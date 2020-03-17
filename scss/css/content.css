@@ -1,0 +1,108 @@
+.rowhover .col-sm-8.content {
+  padding: 0 30px 0 0;
+  margin: 15px 0 0 0;
+}
+
+.rowhover .col-sm-8.content h4.can-ho {
+  font-size: 16px;
+  color: #484848;
+}
+
+.rowhover .col-sm-8.content h4.can-ho p1 {
+  color: black;
+  font-size: 18px;
+}
+
+.rowhover .col-sm-8.content h4.can-ho span.danhgia {
+  float: right;
+  font-size: 15px;
+}
+
+.rowhover .col-sm-8.content h4.can-ho span.labal-tieude {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 3px 9px;
+  font-size: 13px;
+}
+
+.rowhover .col-sm-8.content .tenphong {
+  color: black;
+}
+
+.rowhover .col-sm-8.content .giuong-phong {
+  color: #484848;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  max-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-top: 6px;
+}
+
+.rowhover .col-sm-8.content .tienphong {
+  float: right;
+}
+
+.rowhover .col-sm-8.content .tienphong .dollar-top .dollar {
+  font-size: 18px;
+  color: #484848;
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+.rowhover .col-sm-8.content .tienphong .dollar-top i.fas.fa-dollar-sign {
+  color: black !important;
+  font-size: 20px;
+}
+
+.rowhover .col-sm-8.content .tienphong .dollar-top p2 {
+  color: #484848;
+  font-size: 20px;
+  font-family: serif;
+}
+
+.rowhover .col-sm-8.content .tienphong .number-sum {
+  margin-top: -10px;
+  float: right;
+  font-size: 20px;
+}
+
+.rowhover .col-sm-8.content .tienphong .number-sum i.far.fa-question-circle:hover {
+  color: #484848;
+}
+
+@media only screen and (max-width: 1024px) {
+  .rowhover {
+    width: 100%;
+  }
+  .col-sm-8.content {
+    padding-right: 0px;
+    padding-left: 0;
+  }
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .row.rowhover {
+    margin-left: 0px;
+  }
+  .tienphong {
+    float: left !important;
+  }
+  .giuong-phong {
+    display: none !important;
+  }
+  .tienphong .number-sum {
+    display: none !important;
+  }
+}
+/*# sourceMappingURL=content.css.map */

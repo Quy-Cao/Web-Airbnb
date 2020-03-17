@@ -14,7 +14,7 @@ footer {
                 flex-grow: 1;
                 width: 100%;
                 .footer-header {
-                    @include fontsize-lineh(16px, 1.43, $fontColor);
+                    @include fontsize-lineh(16px !important, 1.43,  #767676);
                     margin-bottom: 16px;
                     font-weight: 800 !important;
                 }
@@ -24,6 +24,8 @@ footer {
                 margin-bottom: 4px;
                 & a {
                     @include fontsize-lineh(15x, 1.43, $fontColor);
+                    font-family: var(--font-font_family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
+                    color: #767676 !important;
                 }
                 .label-info {
                     background-color: #0a7b7b;
@@ -34,7 +36,7 @@ footer {
         .footer-finish {
             display: flex;
             .footer-left {
-                @include fontsize-lineh(15x, 1.43, $fontColor);
+                @include fontsize-lineh(16px !important, 1.43,  #767676);
                 & span a{
                     text-decoration: none;
                     color: rgb(111, 109, 109);

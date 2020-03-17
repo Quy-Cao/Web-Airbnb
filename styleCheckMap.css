@@ -1,0 +1,90 @@
+section {
+    width: 100%;
+}
+.content-left2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rowhover {
+    margin: 0;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    height: 305px;
+}
+.row-img1 {
+    width: 100%;
+    padding-left: 0px;
+}
+.content {
+    width: 100%;
+    margin: 0 !important;
+    padding-right: 15px !important;
+}
+.can-ho {
+    display: flex;
+    margin-bottom: 0px;
+    color: #717171 !important;
+}
+.nameLive p {
+    overflow: hidden;
+    width: 215px;
+    height: 21px;
+    margin-bottom: 1px;
+}
+.tenphong {
+    font-size: 18px;
+    
+    margin-top: 5px !important;
+    margin-bottom: 7px;
+    height: 19px !important;
+    width: 100%;
+    overflow: hidden;
+    float: left !important;
+}
+.giuong-phong {
+    display: none !important;
+}
+.tienphong {
+    float: left !important;
+}
+h4.number-sum {
+    display: none;
+}
+.danhgia p1 {
+    font-size: 15px !important;
+}
+.pagination-page {
+    width: 100%;
+}
+
+/* jumbotron */
+.jumbotron-row {
+    display: flex;
+    padding: 0 35px;
+}
+.jumbotron-left {
+    width: 475px;
+    height: 252px;
+}
+.jumbotron-content {
+    width: 330px;
+    padding-left: 50px;
+}
+.jumbotron-right {
+    display: flex;
+    width: 616px;
+    margin-left: 60px;
+}
+.content-jumbotron {
+    width: 189px !important;
+    margin-right: 15px;
+}
+.img2 {
+    height: 252px;
+    width: 189px;
+}
+.heart1 { 
+    right: 13px;
+}

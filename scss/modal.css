@@ -1,0 +1,122 @@
+.modal-live {
+  top: 105px;
+  left: 280px;
+  position: absolute;
+  width: 378px;
+}
+
+.list-check-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox-left {
+  height: 24px;
+  width: 20%;
+  margin-top: 23px;
+}
+
+.checkbox-right {
+  width: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.delete {
+  font-size: 17px;
+  text-decoration: underline;
+  background-color: white;
+  border: 1px;
+  border-radius: 10px;
+  float: left;
+  padding: 7px 17px;
+  margin: 0 30px;
+}
+
+.delete:hover {
+  background-color: #f5f2f2;
+}
+
+.delete:focus {
+  outline: none !important;
+}
+
+.save {
+  font-size: 17px;
+  background-color: black;
+  border: 1px;
+  border-radius: 10px;
+  float: right;
+  padding: 7px 17px;
+  margin: 0 30px;
+}
+
+.save:hover {
+  background-color: black;
+}
+
+.save:focus {
+  outline: none !important;
+}
+
+.modal.fade .modal-dialog {
+  /* -webkit-transform: translate(0,-25%); */
+  /* transform: translate(0,-25%); */
+  /* -webkit-transition: -webkit-transform .3s ease-out; */
+  /* transition: -webkit-transform .3s ease-out; */
+  /* transition: transform .3s ease-out; */
+  /* transition: transform .3s ease-out,-webkit-transform .3s ease-out,-o-transform .3s ease-out; */
+}
+
+.fade.in {
+  opacity: 0 !important;
+}
+
+div#myModalLive {
+  opacity: 1 !important;
+}
+
+div#myModalGuest {
+  opacity: 1 !important;
+}
+
+div#myModalWord {
+  opacity: 1 !important;
+}
+
+div#myModalNow {
+  opacity: 1 !important;
+}
+
+div#myModalPrice {
+  opacity: 1 !important;
+}
+
+div#myModalFillter {
+  opacity: 1 !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .price {
+    display: none;
+  }
+  .now {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .word {
+    display: none;
+  }
+  .live {
+    display: none;
+  }
+}
+/*# sourceMappingURL=modal.css.map */
