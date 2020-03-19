@@ -10,6 +10,7 @@
     background-color: white;
     &:hover {
         border: 1px solid black;
+        box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px, rgb(34, 34, 34) 0px 0px 0px 4px, rgba(255, 255, 255, 0.5) 0px 0px 0px 5px !important;
     }
 }
 .group-sub-btn {

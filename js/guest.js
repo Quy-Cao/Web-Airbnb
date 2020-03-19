@@ -5,30 +5,29 @@ var emBe = 0;
 var sum1 = 0;
 
 function tinh(a,b) {
-    
     if(b) {
         document.getElementById("deleteGuest").disabled = false;
         if(a === 1) {   
-        nguoiLon++; 
-        document.getElementById(`number${a}`).innerHTML = nguoiLon;
-        if(nguoiLon > 15 ){
-            document.getElementById(`minus${a}`).disabled = false;
-            document.getElementById(`plus${a}`).disabled = true;
-        }
-        else {
-            document.getElementById(`minus${a}`).disabled = false;
-        }
+            nguoiLon++; 
+            document.getElementById(`number${a}`).innerHTML = nguoiLon;
+            if(nguoiLon > 15 ){
+                document.getElementById(`minus${a}`).disabled = false;
+                document.getElementById(`plus${a}`).disabled = true;
+            }
+            else {
+                document.getElementById(`minus${a}`).disabled = false;
+            }
         }
         if(a === 2) {
-        treEm++;
-        document.getElementById(`number${a}`).innerHTML = treEm;
-        if(treEm > 4){
-            document.getElementById(`minus${a}`).disabled = false;
-            document.getElementById(`plus${a}`).disabled = true;
-        }
-        else {
-            document.getElementById(`minus${a}`).disabled = false;
-        }
+            treEm++;
+            document.getElementById(`number${a}`).innerHTML = treEm;
+            if(treEm > 4){
+                document.getElementById(`minus${a}`).disabled = false;
+                document.getElementById(`plus${a}`).disabled = true;
+            }
+            else {
+                document.getElementById(`minus${a}`).disabled = false;
+            }
         }
         if(a === 3) {
         emBe++;
@@ -44,18 +43,16 @@ function tinh(a,b) {
         }
         else {
             document.getElementById(`number${a}`).innerHTML = nguoiLon;
+            }
+            document.getElementById(`number${a}`).innerHTML = emBe;
+            if(emBe > 4 ){
+                document.getElementById(`minus${a}`).disabled = false;
+                document.getElementById(`plus${a}`).disabled = true;
+            }
+            else {
+                document.getElementById(`minus${a}`).disabled = false;
+            }
         }
-        document.getElementById(`number${a}`).innerHTML = emBe;
-        if(emBe > 4 ){
-            document.getElementById(`minus${a}`).disabled = false;
-            document.getElementById(`plus${a}`).disabled = true;
-        }
-        else {
-            document.getElementById(`minus${a}`).disabled = false;
-        }
-        }
-
-        
     }
     // Nut Minus
     else {
@@ -79,31 +76,30 @@ function tinh(a,b) {
 
         }
         if(a === 2) {
-        treEm--;
-        document.getElementById(`number${a}`).innerHTML = treEm;
-        if(treEm <  1 ){
-            document.getElementById(`plus${a}`).disabled = false;
-            document.getElementById(`minus${a}`).disabled = true;
-            console.log('giam disable');
-        }
-        else {
-            document.getElementById(`plus${a}`).disabled = false;
-        }
+            treEm--;
+            document.getElementById(`number${a}`).innerHTML = treEm;
+            if(treEm <  1 ){
+                document.getElementById(`plus${a}`).disabled = false;
+                document.getElementById(`minus${a}`).disabled = true;
+                console.log('giam disable');
+            }
+            else {
+                document.getElementById(`plus${a}`).disabled = false;
+            }
         }
         if(a === 3) {
-        emBe--;
-        document.getElementById(`number${a}`).innerHTML = emBe;
-        if(emBe <  1 ){
-            document.getElementById(`plus${a}`).disabled = false;
-            document.getElementById(`minus${a}`).disabled = true;
-        }
-        else {
-            document.getElementById(`plus${a}`).disabled = false;
-        }
+            emBe--;
+            document.getElementById(`number${a}`).innerHTML = emBe;
+            if(emBe <  1 ){
+                document.getElementById(`plus${a}`).disabled = false;
+                document.getElementById(`minus${a}`).disabled = true;
+            }
+            else {
+                document.getElementById(`plus${a}`).disabled = false;
+            }
         }
     }
     sum1 = nguoiLon+treEm;
-    
     if(emBe > 0 && nguoiLon >= 0 && treEm >= 0) {
         
         document.getElementById("guest").innerHTML = `${sum1} người lớn, ${emBe} em bé`;
@@ -122,8 +118,26 @@ function tinh(a,b) {
     }
 }
 
+//Nut Save
+function saveGuest() {
+    sum = sum1 + emBe;
+    console.log(sum);
+    if(sum > 0 ) {
+        document.getElementById("guest").style.border = "2px solid black";
+    }
+}
+
 // Nut Delete Guest
 function deleteGuest() {
+    sum = 0;
+    if(sum > 0 ) {
+        document.getElementById("guest").style.border = "2px solid black";
+    }
+    else {
+        document.getElementById("guest").style.border = "1px solid #ccc";
+        document.getElementById("guest").style.padding = "0px 17px";
+        document.getElementById("guest").innerHTML = "Khách";
+    }
     nguoiLon = 0;
     document.getElementById(`number1`).innerHTML = nguoiLon;
     document.getElementById(`minus1`).disabled = true;

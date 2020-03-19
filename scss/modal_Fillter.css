@@ -5,7 +5,6 @@
 
 .modalFillter-content {
   height: 100%;
-  overflow-y: scroll;
 }
 
 .modalFillter-header {
@@ -19,9 +18,18 @@
   opacity: 1;
 }
 
+.modalFillter-header .close:focus {
+  outline: none;
+}
+
 .modalFillter-header .modal-title {
   text-align: center;
   font-size: 24px;
+}
+
+.modalFillter .modal-body-scroll {
+  overflow-y: scroll;
+  height: 445px;
 }
 
 .modalFillter-body {
@@ -91,6 +99,7 @@
 }
 
 .modalFillter .modalFillter-reference {
+  padding: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

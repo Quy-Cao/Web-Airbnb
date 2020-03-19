@@ -20,10 +20,10 @@
 }
 
 //Anh Map
-.anhmap {
-    background-image: url(Anh/map.jpg);
-    @include width-height(410px, 100%);
-}
+#map {
+    height: 100%;
+    width: 100%;
+  }
 
 //responsive
 @include responsive_1024(){

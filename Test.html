@@ -8,36 +8,36 @@
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="event.js"></script>
-
+    
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+    
     <!-- LINK CSS -->
     <!-- <link rel="stylesheet" href="Test.css"> -->
     <link rel="stylesheet" href="style.css">
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <!-- font-family -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
-    <!-- TimeDatePackage -->
-   
     
-     
+    <!-- TimeDatePackage -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    
+    <!-- Test -->
+    
 
 </head>
 <style>
-    /* .formi  {
+form  {
     margin: 60px 0 0 0 !important;
- } */
+ }
  
 .ui-slider .ui-btn-inner {
     padding: 4px 0 0 0 !important;
@@ -83,14 +83,14 @@
         <div class="modal-dialog modal-live">
             <div class="modal-content">
                 <div class="list-check-left">
-                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveFull">
+                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveFull" name="checkbox">
                     <div class="checkbox-right" id="checkboxRight">
                         <h4>Toàn bộ nhà</h4>
                         <p>Tìm một nơi cho riêng bạn</p>
                     </div>
                 </div>
                 <div class="list-check-left">
-                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLivePrivate">
+                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLivePrivate" name="checkbox">
                     <div class="checkbox-right">
                         <h4>
                             <p>Phòng riêng</p>
@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="list-check-left">
-                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveHotel">
+                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveHotel" name="checkbox">
                     <div class="checkbox-right">
                         <h4>
                             <p>Phòng khách sạn</p>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="list-check-left">
-                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveGeneral">
+                    <input type="checkbox" value="" class="checkbox-left" id="cbLeftLiveGeneral" name="checkbox">
                     <div class="checkbox-right">
                         <h4>
                             <p>Phòng chung</p>
@@ -226,7 +226,6 @@
 
         </div>
     </div>
-    <!-- Modal container -->
 
     <!-- Modal Price -->
     <div id="myModalPrice" class="modal fade" role="dialog">
@@ -266,75 +265,77 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Bộ lọc khác</h4>
                 </div>
-                <div class="modal-body modalFillter-body">
-                    <div class="modalFillter-body__title"><h3>Phòng và phòng ngủ</h3></div>
-                    <div class="modalFillter-body__contentAll">
-                        <div class="fillter__content">
-                            <div class="fillter__content-left"><h4>Giường</h4></div>
-                            <div class="fillter__content-right">
-                                <button type="button" id="minusFill1" class="minus" disabled onclick="fillter(1,false)"><h2>-</h2></button>
-                                <div id="numberFill1" class="count">0</div>
-                                <button type="button" id="plusFill1" class="minus" onclick="fillter(1,true)"><h2>+</h2></button>
+                <div class="modal-body-scroll">
+                    <div class="modal-body modalFillter-body">
+                        <div class="modalFillter-body__title"><h3>Phòng và phòng ngủ</h3></div>
+                        <div class="modalFillter-body__contentAll">
+                            <div class="fillter__content">
+                                <div class="fillter__content-left"><h4>Giường</h4></div>
+                                <div class="fillter__content-right">
+                                    <button type="button" id="minusFill1" class="minus" disabled onclick="fillter(1,false)"><h2>-</h2></button>
+                                    <div id="numberFill1" class="count">0</div>
+                                    <button type="button" id="plusFill1" class="minus" onclick="fillter(1,true)"><h2>+</h2></button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="fillter__content">
-                            <div class="fillter__content-left"><h4>Phòng ngủ</h4></div>
-                            <div class="fillter__content-right">
-                                <button type="button" id="minusFill2" class="minus" disabled onclick="fillter(2,false)"><h2>-</h2></button>
-                                <div id="numberFill2" class="count">0</div>
-                                <button type="button" id="plusFill2" class="minus" onclick="fillter(2,true)"><h2>+</h2></button>
+                            <div class="fillter__content">
+                                <div class="fillter__content-left"><h4>Phòng ngủ</h4></div>
+                                <div class="fillter__content-right">
+                                    <button type="button" id="minusFill2" class="minus" disabled onclick="fillter(2,false)"><h2>-</h2></button>
+                                    <div id="numberFill2" class="count">0</div>
+                                    <button type="button" id="plusFill2" class="minus" onclick="fillter(2,true)"><h2>+</h2></button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="fillter__content">
-                            <div class="fillter__content-left"><h4>Phòng tắm</h4></div>
-                            <div class="fillter__content-right">
-                                <button type="button" id="minusFill3" class="minus" disabled onclick="fillter(3,false)"><h2>-</h2></button>
-                                <div id="numberFill3" class="count">0</div>
-                                <button type="button" id="plusFill3" class="minus" onclick="fillter(3,true)"><h2>+</h2></button>
+                            <div class="fillter__content">
+                                <div class="fillter__content-left"><h4>Phòng tắm</h4></div>
+                                <div class="fillter__content-right">
+                                    <button type="button" id="minusFill3" class="minus" disabled onclick="fillter(3,false)"><h2>-</h2></button>
+                                    <div id="numberFill3" class="count">0</div>
+                                    <button type="button" id="plusFill3" class="minus" onclick="fillter(3,true)"><h2>+</h2></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <hr>
-                <div class="modal-body modalFillter-body">
-                    <div class="modalFillterWord">
-                        <div class="modalFillterWord-left">
-                            <h4>Bạn đi công tác?</h4>
-                            <h5>Khám phá các ngôi nhà và khách sạn boutique được người đi công tác xếp hạng 5 sao</h5>
+    
+                    <hr>
+                    <div class="modal-body modalFillter-body">
+                        <div class="modalFillterWord">
+                            <div class="modalFillterWord-left">
+                                <h4>Bạn đi công tác?</h4>
+                                <h5>Khám phá các ngôi nhà và khách sạn boutique được người đi công tác xếp hạng 5 sao</h5>
+                            </div>
+                            <div class="modalWord-right modalFillterWord-right">
+                                <input type="checkbox" id="checkWord">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="modal-body modalFillter-reference">
+                        <div class="modal-body modalFillter-body">
+                            <div class="modalFillter-body__title"><h3>Lựa chọn khác</h3></div>
+                            <div class="modalFillterWord">
+                                <div class="modalFillterWord-left">
+                                    <div>
+                                        <h4>Bạn đi công tác?</h4>
+                                        <h5>Ở cùng với các chủ nhà được công nhận</h5>
+                                        <a href="#"><h5>Tìm hiểu thêm</h5></a>
+                                    </div>
+                                    <div>
+                                        <h4>Phù hợp với người khuyết tật</h4>
+                                        <h5>Tìm một nơi ở đáp ứng nhu cầu di chuyển của bạn</h5>
+                                        <a href="#"><h5>Chọn tính năng nơi bạn ở</h5></a>
+                                    </div>
+                                </div>
+                                
+                            </div>
                         </div>
                         <div class="modalWord-right modalFillterWord-right">
                             <input type="checkbox" id="checkWord">
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="modalFillter-reference">
-                    <div class="modal-body modalFillter-body">
-                        <div class="modalFillter-body__title"><h3>Lựa chọn khác</h3></div>
-                        <div class="modalFillterWord">
-                            <div class="modalFillterWord-left">
-                                <div>
-                                    <h4>Bạn đi công tác?</h4>
-                                    <h5>Ở cùng với các chủ nhà được công nhận</h5>
-                                    <a href="#"><h5>Tìm hiểu thêm</h5></a>
-                                </div>
-                                <div>
-                                    <h4>Phù hợp với người khuyết tật</h4>
-                                    <h5>Tìm một nơi ở đáp ứng nhu cầu di chuyển của bạn</h5>
-                                    <a href="#"><h5>Chọn tính năng nơi bạn ở</h5></a>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="modalWord-right modalFillterWord-right">
-                        <input type="checkbox" id="checkWord">
-                    </div>
-                </div>
-                
                 <div class="modal-footer modalFillter-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-default delete" id="deleteFilltert" onclick="deleteFillter()">Xoá tất cả</button>
+                    <button class="btn btn-info save" onclick="saveFillter()">Hiển thị hơn 300 chỗ ở</button>
                 </div>
             </div>
 
@@ -1043,6 +1044,7 @@
                 <div class="row">
                     <div class="content-left2">
                         <!--combinator 9-->
+                        <hr id="hrFull4">
                         <div class="row rowhover" id="liveFull4">
                             <div class="col-sm-4 row-img1">
                                 <div class="carousel slide" data-ride="carousel" id="anh6" data-interval="false">
@@ -1348,7 +1350,7 @@
             </div>
         </section>
         <aside id="aside">
-            <div class="anhmap"  id="imgMap"></div>
+            <div id="map"></div>
         </aside>
     </div>
 
@@ -1421,9 +1423,13 @@
             </div>
         </div>
     </footer>
+
+
+
     <!-- Datetime -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    
+    
     
     <script src="js/lives.js"></script>
     <script src="js/date.js"></script>
@@ -1431,6 +1437,12 @@
     <script src="js/checkMap.js"></script>
     <script src="js/word.js"></script>
     <script src="js/price.js"></script>
+    <script src="js/MapAPI.js"></script>
+
+    <!-- Map API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTnUbcrq63y05K1jqplj6X1PO-j1R8OGI
+    &callback=initMap"
+    type="text/javascript"></script>
 </body>
 
 </html>

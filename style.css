@@ -8,6 +8,8 @@
 
 .sub-button:hover {
   border: 1px solid black;
+  -webkit-box-shadow: white 0px 0px 0px 2px, #222222 0px 0px 0px 4px, rgba(255, 255, 255, 0.5) 0px 0px 0px 5px !important;
+          box-shadow: white 0px 0px 0px 2px, #222222 0px 0px 0px 4px, rgba(255, 255, 255, 0.5) 0px 0px 0px 5px !important;
 }
 
 .group-sub-btn {
@@ -613,10 +615,9 @@ ul.dropdown-menu .save:hover {
   border-radius: 7px;
 }
 
-.anhmap {
-  background-image: url(Anh/map.jpg);
+#map {
   height: 100%;
-  width: 410px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1207,7 +1208,6 @@ button#saveNow {
 
 .modalFillter-content {
   height: 100%;
-  overflow-y: scroll;
 }
 
 .modalFillter-header {
@@ -1221,9 +1221,18 @@ button#saveNow {
   opacity: 1;
 }
 
+.modalFillter-header .close:focus {
+  outline: none;
+}
+
 .modalFillter-header .modal-title {
   text-align: center;
   font-size: 24px;
+}
+
+.modalFillter .modal-body-scroll {
+  overflow-y: scroll;
+  height: 445px;
 }
 
 .modalFillter-body {
@@ -1293,6 +1302,7 @@ button#saveNow {
 }
 
 .modalFillter .modalFillter-reference {
+  padding: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

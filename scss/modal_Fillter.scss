@@ -8,7 +8,7 @@
     
     &-content {
         height: 100%;
-        overflow-y: scroll;
+        
     }
     &-header {
         height: 65px;
@@ -17,16 +17,24 @@
             font-size: 45px;
             color: black;
             opacity: 1;
+            &:focus {
+                outline: none;
+            }
         }
         & .modal-title {
             text-align: center;
             font-size: 24px;
         }
     }
+    & .modal-body-scroll {
+        overflow-y: scroll;
+        height: 445px;
+    }
     &-body {
+        // overflow-y: scroll;
         padding: 8px 48px;
         &__title {
-            color: black;
+            color: black;   
         }
         &__contentAll {
             display: flex;
@@ -61,6 +69,7 @@
         }
     }
     & .modalFillter-reference {
+        padding: 0px;
         display: flex;
         align-items: center;
     }

@@ -15,10 +15,9 @@
   border-radius: 7px;
 }
 
-.anhmap {
-  background-image: url(Anh/map.jpg);
+#map {
   height: 100%;
-  width: 410px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
